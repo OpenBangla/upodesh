@@ -1,5 +1,3 @@
-use std::fs::read_to_string;
-
 use crate::trie::Trie;
 
 pub struct Words {
@@ -8,9 +6,9 @@ pub struct Words {
 
 impl Words {
     pub fn new() -> Self {
+        let words = include_str!("../data/source-words.txt");
+        
         let mut trie = Trie::new();
-        let words = read_to_string("./data/source-words.txt").unwrap();
-
         for word in words.lines() {
             trie.insert(word.trim());
         }

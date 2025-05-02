@@ -1,4 +1,4 @@
-use std::{collections::HashMap, fs::read_to_string};
+use std::collections::HashMap;
 
 use ahash::RandomState;
 use criterion::{Criterion, black_box, criterion_group, criterion_main};
@@ -51,7 +51,7 @@ fn regex_benchmark(c: &mut Criterion) {
     let table: HashMap<&'static str, &'static [&'static str], RandomState> =
         table.into_iter().collect();
     let database: HashMap<String, Vec<String>, RandomState> =
-        serde_json::from_str(&read_to_string("./data/dictionary.json").unwrap()).unwrap();
+        serde_json::from_str(include_str!("../data/dictionary.json")).unwrap();
     let builder = Parser::new_regex();
     let mut regex = String::with_capacity(1024);
 

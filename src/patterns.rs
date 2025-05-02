@@ -1,4 +1,4 @@
-use std::{collections::HashMap, fs::read_to_string};
+use std::collections::HashMap;
 
 use serde::Deserialize;
 
@@ -19,14 +19,13 @@ pub struct Patterns {
 
 impl Patterns {
     pub fn new() -> Self {
-        let patterns = read_to_string("./data/preprocessed-patterns.json").unwrap();
-        let common_data = read_to_string("./data/source-common-patterns.json").unwrap();
+        let patterns = include_str!("../data/preprocessed-patterns.json");
+        let common_data = include_str!("../data/source-common-patterns.json");
 
-        let common = serde_json::from_str(&common_data).unwrap();
+        let dict: HashMap<String, Block> = serde_json::from_str(patterns).unwrap();
+        let common = serde_json::from_str(common_data).unwrap();
 
-        let dict: HashMap<String, Block> = serde_json::from_str(&patterns).unwrap();
         let mut trie = Trie::new();
-
         for key in dict.keys() {
             trie.insert(key);
         }
