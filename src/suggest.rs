@@ -17,9 +17,8 @@ impl Suggest {
 
     pub fn suggest(&self, input: &str) -> Vec<String> {
         let word = fix_string(input);
-        let mut suggestions: HashSet<String> = HashSet::new();
 
-        let (matched, mut remaining, _, _) = self.patterns.trie.match_longest_common_prefix(&word);
+        let (matched, mut remaining, _) = self.patterns.trie.match_longest_common_prefix(&word);
 
         let matched_patterns = &self.patterns.dict.get(&matched).unwrap().transliterate;
         let common_patterns_len = self.patterns.common.len();
@@ -47,13 +46,13 @@ impl Suggest {
             matched_nodes.extend(additional_nodes);
         }
 
-        while remaining.len() > 0 {
-            let (mut new_matched, mut new_remaining, mut complete, _) =
+        while !remaining.is_empty() {
+            let (mut new_matched, mut new_remaining, mut complete) =
                 self.patterns.trie.match_longest_common_prefix(&remaining);
 
             if !complete {
                 for i in (0..remaining.len()).rev() {
-                    (new_matched, new_remaining, complete, _) = self
+                    (new_matched, new_remaining, complete) = self
                         .patterns
                         .trie
                         .match_longest_common_prefix(&remaining[..i]);
@@ -109,12 +108,8 @@ impl Suggest {
             matched_nodes.extend(additional_nodes);
         }
 
-        for node in matched_nodes.iter() {
-            if let Some(word) = node.word.as_ref() {
-                suggestions.insert(word.clone());
-            }
-        }
-
+        let suggestions: HashSet<String> =
+            matched_nodes.iter().filter_map(|n| n.get_word()).collect();
         suggestions.into_iter().collect()
     }
 }
