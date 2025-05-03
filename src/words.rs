@@ -7,12 +7,8 @@ pub struct Words {
 impl Words {
     pub fn new() -> Self {
         let words = include_str!("../data/source-words.txt");
-        
-        let mut trie = Trie::new();
-        for word in words.lines() {
-            trie.insert(word.trim());
-        }
 
+        let trie = Trie::from_strings(words.lines().map(|s| s.trim()));
         Words { trie }
     }
 }

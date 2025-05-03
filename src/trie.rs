@@ -54,19 +54,27 @@ pub struct Trie {
 }
 
 impl Trie {
-    pub fn new() -> Self {
+    fn new() -> Self {
         Trie {
             root: TrieNode::new(),
         }
     }
 
-    pub fn insert(&mut self, word: &str) {
+    fn insert(&mut self, word: &str) {
         let mut current_node = &mut self.root;
         for ch in word.chars() {
             current_node = current_node.children.entry(ch).or_insert(TrieNode::new());
         }
 
         current_node.word = Some(word.to_string()); // Store the word at the end of the node
+    }
+
+    pub fn from_strings<'a>(words: impl Iterator<Item = &'a str>) -> Self {
+        let mut trie = Trie::new();
+        for word in words {
+            trie.insert(word);
+        }
+        trie
     }
 
     /// FindMatchingNode
@@ -144,17 +152,9 @@ impl Trie {
 mod tests {
     use super::*;
 
-    fn build_trie(entries: &[&str]) -> Trie {
-        let mut trie = Trie::new();
-        for entry in entries {
-            trie.insert(entry);
-        }
-        trie
-    }
-
     #[test]
     fn test_find_matching_node() {
-        let trie = build_trie(&["ক", "কখ", "কখগঘঙচছ"]);
+        let trie = Trie::from_strings(["ক", "কখ", "কখগঘঙচছ"].into_iter());
 
         let n1 = trie.matching_node("ক").unwrap();
 
@@ -167,7 +167,7 @@ mod tests {
 
     #[test]
     fn test_is_complete_word() {
-        let trie = build_trie(&["ক", "কখ", "কখগঘঙচছ"]);
+        let trie = Trie::from_strings(["ক", "কখ", "কখগঘঙচছ"].into_iter());
 
         let n1 = trie.matching_node("ক").unwrap();
         assert!(n1.is_complete_word());
@@ -184,7 +184,7 @@ mod tests {
 
     #[test]
     fn test_match_prefix() {
-        let trie = build_trie(&["ক", "কখগ", "কখগঘঙ", "চ", "চছজ", "চছজঝঞ", "১"]);
+        let trie = Trie::from_strings(["ক", "কখগ", "কখগঘঙ", "চ", "চছজ", "চছজঝঞ", "১"].into_iter());
 
         assert_eq!(trie.match_prefix("ক"), vec!["কখগ", "কখগঘঙ", "ক"]);
         assert_eq!(trie.match_prefix("কখ"), vec!["কখগ", "কখগঘঙ"]);
@@ -195,7 +195,7 @@ mod tests {
 
     #[test]
     fn test_match_longest_common_prefix() {
-        let trie = build_trie(&["ক", "কখগ", "কখগঘঙ", "চ", "চছজ", "চছজঝঞ", "১"]);
+        let trie = Trie::from_strings(["ক", "কখগ", "কখগঘঙ", "চ", "চছজ", "চছজঝঞ", "১"].into_iter());
 
         assert_eq!(
             trie.match_longest_common_prefix("ক"),
