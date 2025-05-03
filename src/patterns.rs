@@ -25,11 +25,7 @@ impl Patterns {
         let dict: HashMap<String, Block> = serde_json::from_str(patterns).unwrap();
         let common = serde_json::from_str(common_data).unwrap();
 
-        let mut trie = Trie::new();
-        for key in dict.keys() {
-            trie.insert(key);
-        }
-
+        let trie = Trie::from_strings(dict.keys().map(|s| s.as_str()));
         Patterns { dict, trie, common }
     }
 }
