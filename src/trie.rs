@@ -37,7 +37,7 @@ impl TrieNode {
     }
 
     /// FindMatchingNode
-    pub fn matching_node(&self, word: &str) -> Option<&TrieNode> {
+    pub fn get_matching_node(&self, word: &str) -> Option<&TrieNode> {
         let mut current_node = self;
         for ch in word.chars() {
             match current_node.children.get(&ch) {
@@ -90,25 +90,21 @@ impl Trie {
     }
 
     /// findLongestPrefixNode
-    fn longest_prefix(&self, word: &str) -> Option<(&TrieNode, String)> {
+    fn longest_prefix(&self, word: &str) -> (&TrieNode, usize) {
         let mut current_node = &self.root;
-        let mut longest_prefix = String::new();
+        let mut prefix_len: usize = 0;
 
         for ch in word.chars() {
             match current_node.children.get(&ch) {
                 Some(node) => {
-                    longest_prefix.push(ch);
+                    prefix_len += ch.len_utf8();
                     current_node = node;
                 }
                 None => break,
             }
         }
 
-        if longest_prefix.is_empty() {
-            None
-        } else {
-            Some((current_node, longest_prefix))
-        }
+        (current_node, prefix_len)
     }
 
     /// MatchPrefix
@@ -119,7 +115,8 @@ impl Trie {
             return result;
         }
 
-        let Some((node, _)) = self.longest_prefix(prefix) else {
+        let (node, prefix_len) = self.longest_prefix(prefix);
+        if prefix_len == 0 {
             return result;
         };
 
@@ -133,17 +130,13 @@ impl Trie {
     }
 
     /// MatchLongestCommonPrefix
-    pub fn match_longest_common_prefix(&self, prefix: &str) -> (String, String, bool) {
+    pub fn match_longest_common_prefix<'a>(&self, prefix: &'a str) -> (&'a str, &'a str, bool) {
         if prefix.is_empty() {
-            return ("".to_string(), "".to_string(), false);
+            return ("", "", false);
         }
 
-        let Some((node, matched_prefix)) = self.longest_prefix(prefix) else {
-            return ("".to_string(), prefix.to_string(), false);
-        };
-
-        let remaining = prefix[matched_prefix.len()..].to_string();
-
+        let (node, matched_prefix_len) = self.longest_prefix(prefix);
+        let (matched_prefix, remaining) = prefix.split_at(matched_prefix_len);
         (matched_prefix, remaining, node.word.is_some())
     }
 }
@@ -158,9 +151,9 @@ mod tests {
 
         let n1 = trie.matching_node("ক").unwrap();
 
-        let n2 = n1.matching_node("খ").unwrap();
+        let n2 = n1.get_matching_node("খ").unwrap();
 
-        _ = n2.matching_node("গঘ").unwrap();
+        _ = n2.get_matching_node("গঘ").unwrap();
 
         _ = trie.matching_node("কখগঘ").unwrap();
     }
@@ -172,10 +165,10 @@ mod tests {
         let n1 = trie.matching_node("ক").unwrap();
         assert!(n1.is_complete_word());
 
-        let n2 = n1.matching_node("খ").unwrap();
+        let n2 = n1.get_matching_node("খ").unwrap();
         assert!(n2.is_complete_word());
 
-        let n3 = n2.matching_node("গঘ").unwrap();
+        let n3 = n2.get_matching_node("গঘ").unwrap();
         assert!(!n3.is_complete_word());
 
         let n4 = trie.matching_node("কখগঘ").unwrap();
@@ -197,21 +190,18 @@ mod tests {
     fn test_match_longest_common_prefix() {
         let trie = Trie::from_strings(["ক", "কখগ", "কখগঘঙ", "চ", "চছজ", "চছজঝঞ", "১"].into_iter());
 
-        assert_eq!(
-            trie.match_longest_common_prefix("ক"),
-            ("ক".to_string(), "".to_string(), true)
-        );
+        assert_eq!(trie.match_longest_common_prefix("ক"), ("ক", "", true));
         assert_eq!(
             trie.match_longest_common_prefix("ক1234"),
-            ("ক".to_string(), "1234".to_string(), true)
+            ("ক", "1234", true)
         );
         assert_eq!(
             trie.match_longest_common_prefix("1234"),
-            ("".to_string(), "1234".to_string(), false)
+            ("", "1234", false)
         );
         assert_eq!(
             trie.match_longest_common_prefix("কখগঘঙচছজঝঞ"),
-            ("কখগঘঙ".to_string(), "চছজঝঞ".to_string(), true)
+            ("কখগঘঙ", "চছজঝঞ", true)
         );
     }
 }
