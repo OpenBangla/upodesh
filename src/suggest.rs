@@ -16,11 +16,11 @@ impl Suggest {
     }
 
     pub fn suggest(&self, input: &str) -> Vec<String> {
-        let word = fix_string(input);
+        let input = fix_string(input);
 
-        let (matched, mut remaining, _) = self.patterns.trie.match_longest_common_prefix(&word);
+        let (matched, mut remaining, _) = self.patterns.trie.match_longest_common_prefix(&input);
 
-        let matched_patterns = &self.patterns.dict.get(&matched).unwrap().transliterate;
+        let matched_patterns = &self.patterns.dict.get(matched).unwrap().transliterate;
         let common_patterns_len = self.patterns.common.len();
         let mut matched_nodes: Vec<&TrieNode> =
             Vec::with_capacity(matched_patterns.len() * common_patterns_len);
@@ -36,7 +36,7 @@ impl Suggest {
 
             for matched_node in matched_nodes.iter() {
                 for common in self.patterns.common.iter() {
-                    if let Some(node) = matched_node.matching_node(common) {
+                    if let Some(node) = matched_node.get_matching_node(common) {
                         additional_nodes.push(node);
                     }
                 }
@@ -58,7 +58,7 @@ impl Suggest {
                         .match_longest_common_prefix(&remaining[..i]);
 
                     if complete {
-                        remaining = remaining[i..].to_string();
+                        remaining = &remaining[i..];
                         break;
                     }
                 }
@@ -66,13 +66,13 @@ impl Suggest {
                 remaining = new_remaining;
             }
 
-            let new_matched_patterns = &self.patterns.dict.get(&new_matched).unwrap().transliterate;
+            let new_matched_patterns = &self.patterns.dict.get(new_matched).unwrap().transliterate;
             let mut new_matched_nodes: Vec<&TrieNode> =
                 Vec::with_capacity(new_matched_patterns.len());
 
             for p in new_matched_patterns {
                 for node in matched_nodes.iter() {
-                    if let Some(new_node) = node.matching_node(p) {
+                    if let Some(new_node) = node.get_matching_node(p) {
                         new_matched_nodes.push(new_node);
                     }
                 }
@@ -81,7 +81,7 @@ impl Suggest {
             if self
                 .patterns
                 .dict
-                .get(&new_matched)
+                .get(new_matched)
                 .unwrap()
                 .entire_block_optional
                 .is_some()
@@ -98,7 +98,7 @@ impl Suggest {
 
             for matched_node in matched_nodes.iter() {
                 for common in self.patterns.common.iter() {
-                    if let Some(node) = matched_node.matching_node(common) {
+                    if let Some(node) = matched_node.get_matching_node(common) {
                         additional_nodes.push(node);
                     }
                 }
