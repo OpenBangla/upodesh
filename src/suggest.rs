@@ -1,16 +1,22 @@
 use std::collections::HashSet;
 
-use crate::{patterns::Patterns, trie::TrieNode, utils::fix_string, words::Words};
+use crate::{
+    patterns::Patterns,
+    trie::{Trie, TrieNode},
+    utils::fix_string,
+};
 
 pub struct Suggest {
     patterns: Patterns,
-    words: Words,
+    words: Trie,
 }
 
 impl Suggest {
     pub fn new() -> Self {
         let patterns = Patterns::new();
-        let words = Words::new();
+        let words_data = include_str!("../data/source-words.txt");
+
+        let words = Trie::from_strings(words_data.lines().map(|s| s.trim()));
 
         Suggest { patterns, words }
     }
@@ -26,7 +32,7 @@ impl Suggest {
             Vec::with_capacity(matched_patterns.len() * common_patterns_len);
 
         for p in matched_patterns {
-            if let Some(node) = self.words.trie.matching_node(p) {
+            if let Some(node) = self.words.matching_node(p) {
                 matched_nodes.push(node);
             }
 
