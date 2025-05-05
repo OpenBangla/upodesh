@@ -1,33 +1,52 @@
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
+
+use serde::Deserialize;
 
 use crate::{
-    patterns::Patterns,
     trie::{Trie, TrieNode},
     utils::fix_string,
 };
 
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Block {
+    pub transliterate: Vec<String>,
+    pub entire_block_optional: Option<bool>,
+}
+
 pub struct Suggest {
-    patterns: Patterns,
+    patterns: HashMap<String, Block>,
+    patterns_trie: Trie,
     words: Trie,
+    common_suffixes: Vec<String>,
 }
 
 impl Suggest {
     pub fn new() -> Self {
-        let patterns = Patterns::new();
+        let patterns_data = include_str!("../data/preprocessed-patterns.json");
         let words_data = include_str!("../data/source-words.txt");
+        let common_data = include_str!("../data/source-common-patterns.json");
 
+        let patterns: HashMap<String, Block> = serde_json::from_str(patterns_data).unwrap();
+        let patterns_trie = Trie::from_strings(patterns.keys().map(|s| s.as_str()));
         let words = Trie::from_strings(words_data.lines().map(|s| s.trim()));
+        let common_suffixes = serde_json::from_str(common_data).unwrap();
 
-        Suggest { patterns, words }
+        Suggest {
+            patterns,
+            patterns_trie,
+            words,
+            common_suffixes,
+        }
     }
 
     pub fn suggest(&self, input: &str) -> Vec<String> {
         let input = fix_string(input);
 
-        let (matched, mut remaining, _) = self.patterns.trie.match_longest_common_prefix(&input);
+        let (matched, mut remaining, _) = self.patterns_trie.match_longest_common_prefix(&input);
 
-        let matched_patterns = &self.patterns.dict.get(matched).unwrap().transliterate;
-        let common_patterns_len = self.patterns.common.len();
+        let matched_patterns = &self.patterns.get(matched).unwrap().transliterate;
+        let common_patterns_len = self.common_suffixes.len();
         let mut matched_nodes: Vec<&TrieNode> =
             Vec::with_capacity(matched_patterns.len() * common_patterns_len);
 
@@ -41,8 +60,8 @@ impl Suggest {
                 Vec::with_capacity(matched_nodes.len() * common_patterns_len);
 
             for matched_node in matched_nodes.iter() {
-                for common in self.patterns.common.iter() {
-                    if let Some(node) = matched_node.get_matching_node(common) {
+                for suffix in self.common_suffixes.iter() {
+                    if let Some(node) = matched_node.get_matching_node(suffix) {
                         additional_nodes.push(node);
                     }
                 }
@@ -54,13 +73,12 @@ impl Suggest {
 
         while !remaining.is_empty() {
             let (mut new_matched, mut new_remaining, mut complete) =
-                self.patterns.trie.match_longest_common_prefix(&remaining);
+                self.patterns_trie.match_longest_common_prefix(&remaining);
 
             if !complete {
                 for i in (0..remaining.len()).rev() {
                     (new_matched, new_remaining, complete) = self
-                        .patterns
-                        .trie
+                        .patterns_trie
                         .match_longest_common_prefix(&remaining[..i]);
 
                     if complete {
@@ -72,7 +90,7 @@ impl Suggest {
                 remaining = new_remaining;
             }
 
-            let new_matched_patterns = &self.patterns.dict.get(new_matched).unwrap().transliterate;
+            let new_matched_patterns = &self.patterns.get(new_matched).unwrap().transliterate;
             let mut new_matched_nodes: Vec<&TrieNode> =
                 Vec::with_capacity(new_matched_patterns.len());
 
@@ -86,7 +104,6 @@ impl Suggest {
 
             if self
                 .patterns
-                .dict
                 .get(new_matched)
                 .unwrap()
                 .entire_block_optional
@@ -103,8 +120,8 @@ impl Suggest {
                 Vec::with_capacity(matched_nodes.len() * common_patterns_len);
 
             for matched_node in matched_nodes.iter() {
-                for common in self.patterns.common.iter() {
-                    if let Some(node) = matched_node.get_matching_node(common) {
+                for suffix in self.common_suffixes.iter() {
+                    if let Some(node) = matched_node.get_matching_node(suffix) {
                         additional_nodes.push(node);
                     }
                 }
