@@ -23,14 +23,14 @@ pub struct Suggest {
 
 impl Suggest {
     pub fn new() -> Self {
-        let patterns_data = include_str!("../data/preprocessed-patterns.json");
+        let patterns_data = include_bytes!("../data/preprocessed-patterns.json");
         let words_data = include_str!("../data/source-words.txt");
-        let common_data = include_str!("../data/source-common-patterns.json");
+        let common_data = include_bytes!("../data/source-common-patterns.json");
 
-        let patterns: HashMap<String, Block> = serde_json::from_str(patterns_data).unwrap();
+        let patterns: HashMap<String, Block> = serde_json::from_slice(patterns_data).unwrap();
         let patterns_trie = Trie::from_strings(patterns.keys().map(|s| s.as_str()));
         let words = Trie::from_strings(words_data.lines().map(|s| s.trim()));
-        let common_suffixes = serde_json::from_str(common_data).unwrap();
+        let common_suffixes = serde_json::from_slice(common_data).unwrap();
 
         Suggest {
             patterns,
