@@ -1,15 +1,15 @@
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct TrieNode {
-    children: HashMap<char, TrieNode>,
+    children: BTreeMap<char, TrieNode>,
     word: Option<String>, // Store the complete word at the end of the node
 }
 
 impl TrieNode {
     fn new() -> Self {
         TrieNode {
-            children: HashMap::new(),
+            children: BTreeMap::new(),
             word: None,
         }
     }
