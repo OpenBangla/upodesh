@@ -1,11 +1,9 @@
 use std::collections::{HashMap, HashSet};
 
 use serde::Deserialize;
+use trie_rs::{Trie, TrieBuilder};
 
-use crate::{
-    trie::{Trie, TrieNode},
-    utils::fix_string,
-};
+use crate::utils::{fix_string, match_longest_common_prefix, MatchableNode};
 
 #[derive(Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -16,10 +14,8 @@ pub struct Block {
 
 pub struct Suggest {
     patterns: HashMap<String, Block>,
-    patterns_trie: Trie,
-    words: Trie,
-    test_words: trie_rs::Trie<u8>,
-    test_patterns: trie_rs::Trie<u8>,
+    words: Trie<u8>,
+    patterns_trie: Trie<u8>,
     common_suffixes: Vec<String>,
 }
 
@@ -29,57 +25,51 @@ impl Suggest {
         let words_data = include_str!("../data/source-words.txt");
         let common_data = include_bytes!("../data/source-common-patterns.json");
 
-        let patterns: HashMap<String, Block> = serde_json::from_slice(patterns_data).unwrap();
-        // let patterns_trie = Trie::from_strings(patterns.keys().map(|s| s.as_str()));
-        let patterns_trie = Trie::new();
-
-        // let words = Trie::from_strings(words_data.lines().map(|s| s.trim()));
-        let words = Trie::new();
+        let patterns: HashMap<String, Block> = serde_json::from_slice(patterns_data).unwrap();      
         let common_suffixes = serde_json::from_slice(common_data).unwrap();
 
-        let mut builder = trie_rs::TrieBuilder::new();
+        let mut builder = TrieBuilder::new();
 
         for word in words_data.lines() {
             builder.push(word.trim());
         }
 
-        let test_words = builder.build();
+        let words = builder.build();
 
-        let mut builder = trie_rs::TrieBuilder::new();
+        let mut builder = TrieBuilder::new();
 
         for pattern in patterns.keys() {
             builder.push(pattern);
         }
 
-        let test_patterns = builder.build();
+        let patterns_trie = builder.build();
 
         Suggest {
             patterns,
-            patterns_trie,
-            words,
             common_suffixes,
-            test_words,
-            test_patterns,
+            words,
+            patterns_trie,
         }
     }
 
     pub fn suggest(&self, input: &str) -> Vec<String> {
         let input = fix_string(input);
 
-        let (matched, mut remaining, _) = self.patterns_trie.match_longest_common_prefix(&input);
+        let (matched, mut remaining, _) = match_longest_common_prefix(&self.patterns_trie,&input);
 
         let matched_patterns = &self.patterns.get(matched).unwrap().transliterate;
         let common_patterns_len = self.common_suffixes.len();
-        let mut matched_nodes: Vec<&TrieNode> =
+        let mut matched_nodes: Vec<MatchableNode> =
             Vec::with_capacity(matched_patterns.len() * common_patterns_len);
 
         for p in matched_patterns {
-            if let Some(node) = self.words.matching_node(p) {
+            let node = MatchableNode::from(&self.words);
+            if let Some(node) = node.get_matching_node(p) {
                 matched_nodes.push(node);
             }
 
             // Try matching optional patterns too
-            let mut additional_nodes: Vec<&TrieNode> =
+            let mut additional_nodes: Vec<MatchableNode> =
                 Vec::with_capacity(matched_nodes.len() * common_patterns_len);
 
             for matched_node in matched_nodes.iter() {
@@ -96,13 +86,12 @@ impl Suggest {
 
         while !remaining.is_empty() {
             let (mut new_matched, mut new_remaining, mut complete) =
-                self.patterns_trie.match_longest_common_prefix(&remaining);
+                match_longest_common_prefix(&self.patterns_trie, &remaining);
 
             if !complete {
                 for i in (0..remaining.len()).rev() {
-                    (new_matched, new_remaining, complete) = self
-                        .patterns_trie
-                        .match_longest_common_prefix(&remaining[..i]);
+                    (new_matched, new_remaining, complete) = 
+                    match_longest_common_prefix(&self.patterns_trie, &remaining[..i]);
 
                     if complete {
                         remaining = &remaining[i..];
@@ -114,7 +103,7 @@ impl Suggest {
             }
 
             let new_matched_patterns = &self.patterns.get(new_matched).unwrap().transliterate;
-            let mut new_matched_nodes: Vec<&TrieNode> =
+            let mut new_matched_nodes: Vec<MatchableNode> =
                 Vec::with_capacity(new_matched_patterns.len());
 
             for p in new_matched_patterns {
@@ -139,7 +128,7 @@ impl Suggest {
             }
 
             // Try matching optional patterns too
-            let mut additional_nodes: Vec<&TrieNode> =
+            let mut additional_nodes: Vec<MatchableNode> =
                 Vec::with_capacity(matched_nodes.len() * common_patterns_len);
 
             for matched_node in matched_nodes.iter() {
@@ -156,6 +145,7 @@ impl Suggest {
 
         let suggestions: HashSet<String> =
             matched_nodes.iter().filter_map(|n| n.get_word()).collect();
+        
         suggestions.into_iter().collect()
     }
 }

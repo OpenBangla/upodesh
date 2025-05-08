@@ -7,6 +7,7 @@ edition = "2024"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 trie-rs = "0.4"
+louds-rs = "0.7"
 
 [dev-dependencies]
 criterion = { version = "0.5", features = ["html_reports"] }
