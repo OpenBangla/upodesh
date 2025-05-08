@@ -2,10 +2,7 @@ use std::collections::{HashMap, HashSet};
 
 use serde::Deserialize;
 
-use crate::{
-    trie::{Trie, TrieNode},
-    utils::fix_string,
-};
+use crate::{trie::Trie, utils::fix_string};
 
 #[derive(Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -46,30 +43,20 @@ impl Suggest {
         let (matched, mut remaining, _) = self.patterns_trie.match_longest_common_prefix(&input);
 
         let matched_patterns = &self.patterns.get(matched).unwrap().transliterate;
-        let common_patterns_len = self.common_suffixes.len();
-        let mut matched_nodes: Vec<&TrieNode> =
-            Vec::with_capacity(matched_patterns.len() * common_patterns_len);
+        let mut matched_nodes = matched_patterns
+            .iter()
+            .filter_map(|p| self.words.matching_node(p))
+            .collect::<Vec<_>>();
 
-        for p in matched_patterns {
-            if let Some(node) = self.words.matching_node(p) {
-                matched_nodes.push(node);
-            }
-
-            // Try matching optional patterns too
-            let mut additional_nodes: Vec<&TrieNode> =
-                Vec::with_capacity(matched_nodes.len() * common_patterns_len);
-
-            for matched_node in matched_nodes.iter() {
-                for suffix in self.common_suffixes.iter() {
-                    if let Some(node) = matched_node.get_matching_node(suffix) {
-                        additional_nodes.push(node);
-                    }
-                }
-            }
-
-            // Merge additional nodes with matched_nodes
-            matched_nodes.extend(additional_nodes);
-        }
+        let additional_nodes = matched_nodes
+            .iter()
+            .flat_map(|node| {
+                self.common_suffixes
+                    .iter()
+                    .filter_map(|suffix| node.get_matching_node(suffix))
+            })
+            .collect::<Vec<_>>();
+        matched_nodes.extend(additional_nodes);
 
         while !remaining.is_empty() {
             let (mut new_matched, mut new_remaining, mut complete) =
@@ -91,16 +78,14 @@ impl Suggest {
             }
 
             let new_matched_patterns = &self.patterns.get(new_matched).unwrap().transliterate;
-            let mut new_matched_nodes: Vec<&TrieNode> =
-                Vec::with_capacity(new_matched_patterns.len());
-
-            for p in new_matched_patterns {
-                for node in matched_nodes.iter() {
-                    if let Some(new_node) = node.get_matching_node(p) {
-                        new_matched_nodes.push(new_node);
-                    }
-                }
-            }
+            let new_matched_nodes = new_matched_patterns
+                .iter()
+                .flat_map(|p| {
+                    matched_nodes
+                        .iter()
+                        .filter_map(|node| node.get_matching_node(p))
+                })
+                .collect::<Vec<_>>();
 
             if self
                 .patterns
@@ -115,20 +100,15 @@ impl Suggest {
                 matched_nodes = new_matched_nodes;
             }
 
-            // Try matching optional patterns too
-            let mut additional_nodes: Vec<&TrieNode> =
-                Vec::with_capacity(matched_nodes.len() * common_patterns_len);
-
-            for matched_node in matched_nodes.iter() {
-                for suffix in self.common_suffixes.iter() {
-                    if let Some(node) = matched_node.get_matching_node(suffix) {
-                        additional_nodes.push(node);
-                    }
-                }
-            }
-
-            // Merge additional nodes with matched_nodes
-            matched_nodes.extend(additional_nodes);
+            let additional_matched_nodes = matched_nodes
+                .iter()
+                .flat_map(|node| {
+                    self.common_suffixes
+                        .iter()
+                        .filter_map(|suffix| node.get_matching_node(suffix))
+                })
+                .collect::<Vec<_>>();
+            matched_nodes.extend(additional_matched_nodes);
         }
 
         let suggestions: HashSet<_> = matched_nodes.iter().filter_map(|n| n.get_word()).collect();
@@ -171,12 +151,24 @@ mod tests {
         assert_eq!(sort(suggest.suggest("ongshocched")), vec!["অংশচ্ছেদ"]);
         assert_eq!(sort(suggest.suggest("shadhinota")), vec!["স্বাধীনতা"]);
         assert_eq!(sort(suggest.suggest("dukkho")), vec!["দুঃখ", "দুখ"]);
-        assert_eq!(sort(suggest.suggest("cool")), vec!["চুল", "চূল", "চোল", "ছুঁল", "ছুল", "ছোল"]);
-        assert_eq!(sort(suggest.suggest("shokti")), vec!["শকতি", "শক্তি", "সক্তি"]);
+        assert_eq!(
+            sort(suggest.suggest("cool")),
+            vec!["চুল", "চূল", "চোল", "ছুঁল", "ছুল", "ছোল"]
+        );
+        assert_eq!(
+            sort(suggest.suggest("shokti")),
+            vec!["শকতি", "শক্তি", "সক্তি"]
+        );
         assert_eq!(sort(suggest.suggest("chup")), vec!["চুপ", "ছুপ"]);
-        assert_eq!(sort(suggest.suggest("as")), vec!["অশ্ব", "অশ্ম", "আঁশ", "আশ", "আস", "এস"]);
+        assert_eq!(
+            sort(suggest.suggest("as")),
+            vec!["অশ্ব", "অশ্ম", "আঁশ", "আশ", "আস", "এস"]
+        );
         assert_eq!(sort(suggest.suggest("apni")), vec!["আপনি"]);
-        assert_eq!(sort(suggest.suggest("kkhet")), vec!["ক্ষেত", "খেঁট", "খেট", "খেত", "খ্যাঁট", "খ্যাঁত", "খ্যাত"]);
+        assert_eq!(
+            sort(suggest.suggest("kkhet")),
+            vec!["ক্ষেত", "খেঁট", "খেট", "খেত", "খ্যাঁট", "খ্যাঁত", "খ্যাত"]
+        );
         assert_eq!(sort(suggest.suggest("ebong")), vec!["এবং"]);
         assert_eq!(sort(suggest.suggest("shesh")), vec!["শেষ", "সেস"]);
     }
