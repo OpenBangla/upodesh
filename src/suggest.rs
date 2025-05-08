@@ -18,6 +18,8 @@ pub struct Suggest {
     patterns: HashMap<String, Block>,
     patterns_trie: Trie,
     words: Trie,
+    test_words: trie_rs::Trie<u8>,
+    test_patterns: trie_rs::Trie<u8>,
     common_suffixes: Vec<String>,
 }
 
@@ -28,15 +30,36 @@ impl Suggest {
         let common_data = include_bytes!("../data/source-common-patterns.json");
 
         let patterns: HashMap<String, Block> = serde_json::from_slice(patterns_data).unwrap();
-        let patterns_trie = Trie::from_strings(patterns.keys().map(|s| s.as_str()));
-        let words = Trie::from_strings(words_data.lines().map(|s| s.trim()));
+        // let patterns_trie = Trie::from_strings(patterns.keys().map(|s| s.as_str()));
+        let patterns_trie = Trie::new();
+
+        // let words = Trie::from_strings(words_data.lines().map(|s| s.trim()));
+        let words = Trie::new();
         let common_suffixes = serde_json::from_slice(common_data).unwrap();
+
+        let mut builder = trie_rs::TrieBuilder::new();
+
+        for word in words_data.lines() {
+            builder.push(word.trim());
+        }
+
+        let test_words = builder.build();
+
+        let mut builder = trie_rs::TrieBuilder::new();
+
+        for pattern in patterns.keys() {
+            builder.push(pattern);
+        }
+
+        let test_patterns = builder.build();
 
         Suggest {
             patterns,
             patterns_trie,
             words,
             common_suffixes,
+            test_words,
+            test_patterns,
         }
     }
 

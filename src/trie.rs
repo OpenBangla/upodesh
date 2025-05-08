@@ -54,7 +54,7 @@ pub struct Trie {
 }
 
 impl Trie {
-    fn new() -> Self {
+    pub fn new() -> Self {
         Trie {
             root: TrieNode::new(),
         }
