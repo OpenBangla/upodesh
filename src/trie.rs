@@ -6,7 +6,7 @@ pub struct TrieNode {
     word: Option<String>, // Store the complete word at the end of the node
 }
 
-impl TrieNode {
+impl<'a> TrieNode {
     fn new() -> Self {
         TrieNode {
             children: BTreeMap::new(),
@@ -18,15 +18,15 @@ impl TrieNode {
         self.word.is_some()
     }
 
-    pub fn get_word(&self) -> Option<String> {
-        self.word.clone()
+    pub fn get_word(&'a self) -> Option<&'a str> {
+        self.word.as_deref()
     }
 
-    fn find_complete_words(&self) -> Vec<String> {
+    fn find_complete_words(&'a self) -> Vec<&'a str> {
         let mut words = Vec::new();
         for node in self.children.values() {
             if let Some(word) = &node.word {
-                words.push(word.clone());
+                words.push(word.as_str());
             }
 
             let child_words = node.find_complete_words();
@@ -53,7 +53,7 @@ pub struct Trie {
     root: TrieNode,
 }
 
-impl Trie {
+impl<'a> Trie {
     fn new() -> Self {
         Trie {
             root: TrieNode::new(),
@@ -69,7 +69,7 @@ impl Trie {
         current_node.word = Some(word.to_string()); // Store the word at the end of the node
     }
 
-    pub fn from_strings<'a>(words: impl Iterator<Item = &'a str>) -> Self {
+    pub fn from_strings(words: impl Iterator<Item = &'a str>) -> Self {
         let mut trie = Trie::new();
         for word in words {
             trie.insert(word);
@@ -79,14 +79,7 @@ impl Trie {
 
     /// FindMatchingNode
     pub fn matching_node(&self, word: &str) -> Option<&TrieNode> {
-        let mut current_node = &self.root;
-        for ch in word.chars() {
-            match current_node.children.get(&ch) {
-                Some(node) => current_node = node,
-                None => return None,
-            }
-        }
-        Some(current_node)
+        self.root.get_matching_node(word)
     }
 
     /// findLongestPrefixNode
@@ -108,7 +101,7 @@ impl Trie {
     }
 
     /// MatchPrefix
-    pub fn match_prefix(&self, prefix: &str) -> Vec<String> {
+    pub fn match_prefix(&'a self, prefix: &'a str) -> Vec<&'a str> {
         let mut result = Vec::new();
 
         if prefix.is_empty() {
@@ -122,15 +115,15 @@ impl Trie {
 
         result.extend(node.find_complete_words());
 
-        if node.word.is_some() {
-            result.push(node.word.clone().unwrap());
+        if let Some(word) = &node.word {
+            result.push(word);
         }
 
         result
     }
 
     /// MatchLongestCommonPrefix
-    pub fn match_longest_common_prefix<'a>(&self, prefix: &'a str) -> (&'a str, &'a str, bool) {
+    pub fn match_longest_common_prefix(&self, prefix: &'a str) -> (&'a str, &'a str, bool) {
         if prefix.is_empty() {
             return ("", "", false);
         }

@@ -131,9 +131,8 @@ impl Suggest {
             matched_nodes.extend(additional_nodes);
         }
 
-        let suggestions: HashSet<String> =
-            matched_nodes.iter().filter_map(|n| n.get_word()).collect();
-        suggestions.into_iter().collect()
+        let suggestions: HashSet<_> = matched_nodes.iter().filter_map(|n| n.get_word()).collect();
+        suggestions.into_iter().map(|s| s.to_string()).collect()
     }
 }
 
