@@ -4,14 +4,16 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+fst = "0.4"
+okkhor = { version = "0.7", features = ["regex"] }
+regex = "1"
+regex-automata = { version = "0.4" }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 
 [dev-dependencies]
 criterion = { version = "0.5", features = ["html_reports"] }
 ahash = "0.8"
-regex = "1"
-okkhor = { version = "0.7", features = ["regex"] }
 
 [[bench]]
 name = "suggestions"
