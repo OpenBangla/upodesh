@@ -1,11 +1,12 @@
 use std::collections::HashMap;
+use std::hint::black_box;
 
 use ahash::RandomState;
-use criterion::{Criterion, black_box, criterion_group, criterion_main};
+use criterion::{Criterion, criterion_group, criterion_main};
 use okkhor::parser::Parser;
 use regex::Regex;
 
-use upodesh::suggest::Suggest;
+use upodesh::{regex::RegexSuggest, suggest::Suggest};
 
 fn upodesh_benchmark(c: &mut Criterion) {
     let suggest = Suggest::new();
@@ -15,6 +16,18 @@ fn upodesh_benchmark(c: &mut Criterion) {
         b.iter(|| suggest.suggest(black_box("arO")))
     });
     c.bench_function("upodesh bistari", |b| {
+        b.iter(|| suggest.suggest(black_box("bistari")))
+    });
+}
+
+fn upodesh_fst_benchmark(c: &mut Criterion) {
+    let mut suggest = RegexSuggest::new();
+
+    c.bench_function("upodesh-fst a", |b| b.iter(|| suggest.suggest(black_box("a"))));
+    c.bench_function("upodesh-fst arO", |b| {
+        b.iter(|| suggest.suggest(black_box("arO")))
+    });
+    c.bench_function("upodesh-fst bistari", |b| {
         b.iter(|| suggest.suggest(black_box("bistari")))
     });
 }
@@ -82,5 +95,5 @@ fn regex_benchmark(c: &mut Criterion) {
     });
 }
 
-criterion_group!(benches, upodesh_benchmark, regex_benchmark);
+criterion_group!(benches, upodesh_benchmark, upodesh_fst_benchmark, regex_benchmark);
 criterion_main!(benches);

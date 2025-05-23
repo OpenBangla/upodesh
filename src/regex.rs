@@ -1,9 +1,10 @@
-use fst::{Set, SetBuilder};
+use fst::{IntoStreamer, Set};
 use okkhor::parser::Parser;
-use regex::Regex;
+
+use crate::automation::DfaFstAutomaton;
 
 
-struct RegexSuggest {
+pub struct RegexSuggest {
     parser: Parser,
     regex: String,
     words: Set<Vec<u8>>,
@@ -28,11 +29,11 @@ impl RegexSuggest {
 
     pub fn suggest(&mut self, input: &str) -> Vec<String> {
         self.parser.convert_regex_into(input, &mut self.regex);
-        let rgx = Regex::new(&self.regex).unwrap();
+        let rgx = DfaFstAutomaton::new(&self.regex);
 
-        let r = self.words.search(rgx);
+        let words = self.words.search(rgx).into_stream().into_strs().unwrap();
 
-        todo!()
+        words
     }
 }
 
@@ -42,6 +43,8 @@ mod tests {
 
     #[test]
     fn test_loading() {
-        let suggest = RegexSuggest::new();
+        let mut suggest = RegexSuggest::new();
+
+        assert_eq!(suggest.suggest("shari"), ["শ\u{9be}রি", "শ\u{9be}রী", "শ\u{9be}ড়ি", "শ\u{9be}ড়ী", "স\u{9be}রি", "স\u{9be}রী", "স\u{9be}ড়ি", "স\u{9be}ড়ী"]);
     }
 }
