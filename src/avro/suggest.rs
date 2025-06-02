@@ -17,16 +17,16 @@ pub struct Block {
 
 pub struct Suggest {
     patterns: HashMap<String, Block>,
-    common_suffixes: Vec<String>,
+    common_suffixes: Vec<&'static str>,
 }
 
 impl Suggest {
     pub fn new() -> Self {
         let patterns_data = include_bytes!("../../data/preprocessed-patterns.json");
-        let common_data = include_bytes!("../../data/source-common-patterns.json");
+        let common_data = include_str!("../../data/source-common-patterns.txt");
 
         let patterns: HashMap<String, Block> = serde_json::from_slice(patterns_data).unwrap();
-        let common_suffixes = serde_json::from_slice(common_data).unwrap();
+        let common_suffixes = common_data.lines().collect();
 
         Suggest {
             patterns,
