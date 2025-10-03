@@ -3,9 +3,7 @@ use std::collections::{HashMap, HashSet};
 use once_cell::sync::Lazy;
 use serde::Deserialize;
 
-use crate::{fst::FstTree, utils::fix_string};
-
-static WORDS: Lazy<FstTree<&[u8]>> = Lazy::new(|| FstTree::from_fst(include_bytes!("words.fst")));
+use crate::{fst::FstTree, avro::utils::fix_string, WORDS};
 
 static PATTERNS: Lazy<FstTree<&[u8]>> =
     Lazy::new(|| FstTree::from_fst(include_bytes!("patterns.fst")));
@@ -24,8 +22,8 @@ pub struct Suggest {
 
 impl Suggest {
     pub fn new() -> Self {
-        let patterns_data = include_bytes!("../data/preprocessed-patterns.json");
-        let common_data = include_bytes!("../data/source-common-patterns.json");
+        let patterns_data = include_bytes!("../../data/preprocessed-patterns.json");
+        let common_data = include_bytes!("../../data/source-common-patterns.json");
 
         let patterns: HashMap<String, Block> = serde_json::from_slice(patterns_data).unwrap();
         let common_suffixes = serde_json::from_slice(common_data).unwrap();

@@ -1,5 +1,5 @@
 use peak_alloc::PeakAlloc;
-use upodesh::suggest::Suggest;
+use upodesh::avro::Suggest;
 
 #[global_allocator]
 static PEAK_ALLOC: PeakAlloc = PeakAlloc;

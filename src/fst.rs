@@ -101,6 +101,23 @@ impl<'a, D: AsRef<[u8]>> FstNode<'a, D> {
         })
     }
 
+    pub fn get_matching_node_by_char(&self, suffix: char) -> Option<FstNode<'a, D>> {
+        let mut node = self.node;
+
+        match node.find_input(suffix as u8) {
+            Some(addr) => {
+                node = self.fst.node(node.transition_addr(addr));
+            }
+            None => return None,
+        }
+
+        Some(FstNode {
+            fst: self.fst,
+            node,
+            word: format!("{}{}", self.word, suffix),
+        })
+    }
+
     pub fn get_word(self) -> Option<String> {
         if self.node.is_final() {
             Some(self.word)

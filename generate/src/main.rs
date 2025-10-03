@@ -52,7 +52,7 @@ fn generate_words_fst() {
 fn generate_patterns_fst() {
     let root = PathBuf::from(var_os("CARGO_MANIFEST_DIR").unwrap());
     let parent = root.parent().unwrap();
-    let dest = parent.join("src").join("patterns.fst");
+    let dest = parent.join("src").join("avro").join("patterns.fst");
 
     let file = File::create(dest).expect("Failed to create patterns.fst");
     let writer = BufWriter::new(file);
@@ -80,7 +80,6 @@ fn generate_patterns_fst() {
 
 fn generate_regex_exploded_patterns(source: &str, dest: &str) {
     let file = File::create(dest).expect("Failed to create destination file");
-    // let writer = BufWriter::new(file);
 
     let regex_patterns: HashMap<String, RegexBlock> =
         serde_json::from_slice(&read(source).expect("Failed to read source patterns file"))
