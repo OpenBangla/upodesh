@@ -20,7 +20,7 @@ jobs:
         platform: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: ${{ matrix.rust }}
@@ -35,7 +35,7 @@ jobs:
     name: MSRV Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@1.63.0 # MSRV for linux distributions (>= Debian 12)
-      # We can't use `cargo test` here because criterion requires a newer version of Rust (>=1.65.0)
+      - uses: actions/checkout@v6
+      - uses: dtolnay/rust-toolchain@1.75.0 # MSRV for linux distributions (>= Debian 12)
+      # We can't use `cargo test` here because criterion requires a newer version of Rust (>=1.81.0)
       - run: cargo build --verbose

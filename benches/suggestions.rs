@@ -2,7 +2,7 @@ use std::{collections::HashMap, hint::black_box};
 
 use ahash::RandomState;
 use criterion::{criterion_group, criterion_main, Criterion};
-use okkhor::parser::Parser;
+use okkhor::regex_suggestion::RegexSuggestion;
 use regex::Regex;
 
 use upodesh::avro::Suggest;
@@ -54,7 +54,7 @@ fn regex_avro_benchmark(c: &mut Criterion) {
         table.into_iter().collect();
     let database: HashMap<String, Vec<String>, RandomState> =
         serde_json::from_slice(include_bytes!("../data/dictionary.json")).unwrap();
-    let builder = Parser::new_regex();
+    let builder = RegexSuggestion::new();
     let mut regex = String::with_capacity(1024);
 
     let mut suggest = |input: &str| -> Vec<String> {

@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
 use ahash::RandomState;
-use okkhor::parser::Parser;
+use okkhor::regex_suggestion::RegexSuggestion;
 use peak_alloc::PeakAlloc;
 use regex::Regex;
 
@@ -46,7 +46,7 @@ fn main() {
         table.into_iter().collect();
     let database: HashMap<String, Vec<String>, RandomState> =
         serde_json::from_slice(include_bytes!("../data/dictionary.json")).unwrap();
-    let builder = Parser::new_regex();
+    let builder = RegexSuggestion::new();
     let mut regex = String::with_capacity(1024);
 
     let mut suggest = |input: &str| -> Vec<String> {
