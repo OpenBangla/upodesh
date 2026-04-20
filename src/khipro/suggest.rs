@@ -150,14 +150,14 @@ mod tests {
         assert_eq!(sort(suggest.suggest("ebong")), vec!["এবং"]);
         assert_eq!(sort(suggest.suggest("zokhon")), vec!["যখন"]);
         assert_eq!(sort(suggest.suggest("garfi")), vec!["গা\u{09DC}ি"]);
-        assert_eq!(sort(suggest.suggest("phol")), vec!["ফল"]);
+        assert_eq!(sort(suggest.suggest("phol")), vec!["ফল", "ফোল"]);
     }
 
     #[test]
     fn test_conjuncts() {
         let suggest = Suggest::new();
 
-        assert_eq!(sort(suggest.suggest("shokti")), vec!["শক্তি"]);
+        assert_eq!(sort(suggest.suggest("shokti")), vec!["শকতি", "শক্তি"]);
         assert_eq!(sort(suggest.suggest("biggan")), vec!["বিজ্ঞান"]);
         assert_eq!(sort(suggest.suggest("ggan")), vec!["জ্ঞান"]);
         assert_eq!(sort(suggest.suggest("cottfgram")), vec!["চট্টগ্রাম"]);

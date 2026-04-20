@@ -1,0 +1,1539 @@
+{
+  "/": {
+    "transliterate": "ঁ"
+  },
+  "a": {
+    "transliterate": "(আ|া)"
+  },
+  "ae": {
+    "transliterate": "(অ্যা|্যা|‍্যা)"
+  },
+  "aef": {
+    "transliterate": "অ্যা"
+  },
+  "af": {
+    "transliterate": "আ"
+  },
+  "b": {
+    "transliterate": "ব"
+  },
+  "bb": {
+    "transliterate": "(ব(্?)ব?)"
+  },
+  "bd": {
+    "transliterate": "(ব(্?)দ)"
+  },
+  "bdh": {
+    "transliterate": "(ব(্?)ধ)"
+  },
+  "bj": {
+    "transliterate": "(ব(্?)জ)"
+  },
+  "bjh": {
+    "transliterate": "বঝ"
+  },
+  "bl": {
+    "transliterate": "(ব(্?)ল)"
+  },
+  "br": {
+    "transliterate": "(ব(্?)র)"
+  },
+  "brf": {
+    "transliterate": "বড়"
+  },
+  "brff": {
+    "transliterate": "বঢ়"
+  },
+  "bz": {
+    "transliterate": "(ব(্?)য)"
+  },
+  "c": {
+    "transliterate": "চ"
+  },
+  "cb": {
+    "transliterate": "(চ(্?)ব)"
+  },
+  "cc": {
+    "transliterate": "(চ(্?)চ?)"
+  },
+  "cch": {
+    "transliterate": "(চ(্?)ছ)"
+  },
+  "cchb": {
+    "transliterate": "(চ(্?)ছ(্?)ব)"
+  },
+  "cchr": {
+    "transliterate": "(চ(্?)ছ(্?)র)"
+  },
+  "cchrf": {
+    "transliterate": "চ্ছড়"
+  },
+  "cchrff": {
+    "transliterate": "চ্ছঢ়"
+  },
+  "ch": {
+    "transliterate": "ছ"
+  },
+  "cn": {
+    "transliterate": "চন"
+  },
+  "cnf": {
+    "transliterate": "চণ"
+  },
+  "cnff": {
+    "transliterate": "(চ(্?)ঞ)"
+  },
+  "cz": {
+    "transliterate": "(চ(্?)য)"
+  },
+  "d": {
+    "transliterate": "দ"
+  },
+  "db": {
+    "transliterate": "(দ(্?)ব)"
+  },
+  "dd": {
+    "transliterate": "(দ(্?)দ?)"
+  },
+  "ddb": {
+    "transliterate": "(দ(্?)দ(্?)ব)"
+  },
+  "ddf": {
+    "transliterate": "(ড(্?)ড?)"
+  },
+  "ddh": {
+    "transliterate": "(দ(্?)ধ)"
+  },
+  "df": {
+    "transliterate": "ড"
+  },
+  "dfb": {
+    "transliterate": "(ড(্?)ব)"
+  },
+  "dfd": {
+    "transliterate": "ডদ"
+  },
+  "dfdf": {
+    "transliterate": "(ড(্?)ড?)"
+  },
+  "dfdff": {
+    "transliterate": "ডঢ"
+  },
+  "dfdfh": {
+    "transliterate": "ডঢ"
+  },
+  "dfdh": {
+    "transliterate": "ডধ"
+  },
+  "dff": {
+    "transliterate": "ঢ"
+  },
+  "dffr": {
+    "transliterate": "(ঢ(্?)র)"
+  },
+  "dffrf": {
+    "transliterate": "ঢড়"
+  },
+  "dffrff": {
+    "transliterate": "ঢঢ়"
+  },
+  "dffz": {
+    "transliterate": "(ঢ(্?)য)"
+  },
+  "dfh": {
+    "transliterate": "ঢ"
+  },
+  "dfhr": {
+    "transliterate": "(ঢ(্?)র)"
+  },
+  "dfhrf": {
+    "transliterate": "ঢড়"
+  },
+  "dfhrff": {
+    "transliterate": "ঢঢ়"
+  },
+  "dfhz": {
+    "transliterate": "(ঢ(্?)য)"
+  },
+  "dfr": {
+    "transliterate": "(ড(্?)র)"
+  },
+  "dfrf": {
+    "transliterate": "ডড়"
+  },
+  "dfrff": {
+    "transliterate": "ডঢ়"
+  },
+  "dfz": {
+    "transliterate": "(ড(্?)য)"
+  },
+  "dg": {
+    "transliterate": "দ্‌গ"
+  },
+  "dgh": {
+    "transliterate": "দ্‌ঘ"
+  },
+  "dh": {
+    "transliterate": "ধ"
+  },
+  "dhb": {
+    "transliterate": "(ধ(্?)ব)"
+  },
+  "dhm": {
+    "transliterate": "(ধ(্?)ম)"
+  },
+  "dhn": {
+    "transliterate": "(ধ(্?)ন)"
+  },
+  "dhr": {
+    "transliterate": "(ধ(্?)র)"
+  },
+  "dhrf": {
+    "transliterate": "ধড়"
+  },
+  "dhrff": {
+    "transliterate": "ধঢ়"
+  },
+  "dhz": {
+    "transliterate": "(ধ(্?)য)"
+  },
+  "dm": {
+    "transliterate": "(দ(্?)ম)"
+  },
+  "dr": {
+    "transliterate": "(দ(্?)র)"
+  },
+  "drf": {
+    "transliterate": "দড়"
+  },
+  "drff": {
+    "transliterate": "দঢ়"
+  },
+  "drz": {
+    "transliterate": "(দ(্?)র(্?)য)"
+  },
+  "dv": {
+    "transliterate": "(দ(্?)ভ)"
+  },
+  "dvr": {
+    "transliterate": "(দ(্?)ভ(্?)র)"
+  },
+  "dvrf": {
+    "transliterate": "দ্ভড়"
+  },
+  "dvrff": {
+    "transliterate": "দ্ভঢ়"
+  },
+  "dz": {
+    "transliterate": "(দ(্?)য)"
+  },
+  "e": {
+    "transliterate": "(এ|ে)"
+  },
+  "ef": {
+    "transliterate": "এ"
+  },
+  "fa": {
+    "transliterate": "া"
+  },
+  "fae": {
+    "transliterate": "্যা"
+  },
+  "fe": {
+    "transliterate": "ে"
+  },
+  "fi": {
+    "transliterate": "ি"
+  },
+  "fii": {
+    "transliterate": "ী"
+  },
+  "foi": {
+    "transliterate": "ৈ"
+  },
+  "fou": {
+    "transliterate": "ৌ"
+  },
+  "fq": {
+    "transliterate": "ৃ"
+  },
+  "fqf": {
+    "transliterate": "‌ৃ"
+  },
+  "fu": {
+    "transliterate": "ু"
+  },
+  "fuf": {
+    "transliterate": "‌ু"
+  },
+  "fuu": {
+    "transliterate": "ূ"
+  },
+  "fuuf": {
+    "transliterate": "‌ূ"
+  },
+  "fw": {
+    "transliterate": "ো"
+  },
+  "fwa": {
+    "transliterate": "োয়া"
+  },
+  "fwe": {
+    "transliterate": "োয়ে"
+  },
+  "g": {
+    "transliterate": "গ"
+  },
+  "gb": {
+    "transliterate": "(গ(্?)ব)"
+  },
+  "gd": {
+    "transliterate": "গদ"
+  },
+  "gdff": {
+    "transliterate": "গঢ"
+  },
+  "gdfh": {
+    "transliterate": "গঢ"
+  },
+  "gdh": {
+    "transliterate": "(গ(্?)ধ)"
+  },
+  "gdhr": {
+    "transliterate": "(গ(্?)ধ(্?)র)"
+  },
+  "gdhrf": {
+    "transliterate": "গ্ধড়"
+  },
+  "gdhrff": {
+    "transliterate": "গ্ধঢ়"
+  },
+  "gdhz": {
+    "transliterate": "(গ(্?)ধ(্?)য)"
+  },
+  "gg": {
+    "transliterate": "জ্ঞ"
+  },
+  "ggg": {
+    "transliterate": "(গ(্?)গ?)"
+  },
+  "gggh": {
+    "transliterate": "জ্ঞঘ"
+  },
+  "gh": {
+    "transliterate": "ঘ"
+  },
+  "ghn": {
+    "transliterate": "(ঘ(্?)ন)"
+  },
+  "ghr": {
+    "transliterate": "(ঘ(্?)র)"
+  },
+  "ghrf": {
+    "transliterate": "ঘড়"
+  },
+  "ghrff": {
+    "transliterate": "ঘঢ়"
+  },
+  "gl": {
+    "transliterate": "(গ(্?)ল)"
+  },
+  "gm": {
+    "transliterate": "(গ(্?)ম)"
+  },
+  "gn": {
+    "transliterate": "(গ(্?)ন)"
+  },
+  "gnf": {
+    "transliterate": "গ্‌ণ"
+  },
+  "gnz": {
+    "transliterate": "(গ(্?)ন(্?)য)"
+  },
+  "gr": {
+    "transliterate": "(গ(্?)র)"
+  },
+  "grf": {
+    "transliterate": "গড়"
+  },
+  "grff": {
+    "transliterate": "গঢ়"
+  },
+  "grz": {
+    "transliterate": "(গ(্?)র(্?)য)"
+  },
+  "gz": {
+    "transliterate": "(গ(্?)য)"
+  },
+  "h": {
+    "transliterate": "হ"
+  },
+  "hb": {
+    "transliterate": "(হ(্?)ব)"
+  },
+  "hl": {
+    "transliterate": "(হ(্?)ল)"
+  },
+  "hm": {
+    "transliterate": "(হ(্?)ম)"
+  },
+  "hn": {
+    "transliterate": "(হ(্?)ন)"
+  },
+  "hnf": {
+    "transliterate": "(হ(্?)ণ)"
+  },
+  "hr": {
+    "transliterate": "(হ(্?)র)"
+  },
+  "hrf": {
+    "transliterate": "হড়"
+  },
+  "hrff": {
+    "transliterate": "হঢ়"
+  },
+  "hz": {
+    "transliterate": "(হ(্?)য)"
+  },
+  "i": {
+    "transliterate": "(ই|ি)"
+  },
+  "if": {
+    "transliterate": "ই"
+  },
+  "ii": {
+    "transliterate": "(ঈ|ী)"
+  },
+  "iif": {
+    "transliterate": "ঈ"
+  },
+  "j": {
+    "transliterate": "জ"
+  },
+  "jb": {
+    "transliterate": "(জ(্?)ব)"
+  },
+  "jh": {
+    "transliterate": "ঝ"
+  },
+  "jj": {
+    "transliterate": "(জ(্?)জ?)"
+  },
+  "jjb": {
+    "transliterate": "(জ(্?)জ(্?)ব)"
+  },
+  "jjh": {
+    "transliterate": "(জ(্?)ঝ)"
+  },
+  "jn": {
+    "transliterate": "জন"
+  },
+  "jnf": {
+    "transliterate": "জণ"
+  },
+  "jnff": {
+    "transliterate": "(জ(্?)ঞ)"
+  },
+  "jr": {
+    "transliterate": "(জ(্?)র)"
+  },
+  "jz": {
+    "transliterate": "(জ(্?)য)"
+  },
+  "k": {
+    "transliterate": "ক"
+  },
+  "kb": {
+    "transliterate": "(ক(্?)ব)"
+  },
+  "kf": {
+    "transliterate": "ক্ষ"
+  },
+  "kfb": {
+    "transliterate": "ক্ষ্ব"
+  },
+  "kfm": {
+    "transliterate": "ক্ষ্ম"
+  },
+  "kfn": {
+    "transliterate": "ক্ষ্ণ"
+  },
+  "kfnf": {
+    "transliterate": "ক্ষ্ণ"
+  },
+  "kfz": {
+    "transliterate": "ক্ষ্য"
+  },
+  "kh": {
+    "transliterate": "খ"
+  },
+  "khr": {
+    "transliterate": "(খ(্?)র)"
+  },
+  "khrf": {
+    "transliterate": "খড়"
+  },
+  "khrff": {
+    "transliterate": "খঢ়"
+  },
+  "khz": {
+    "transliterate": "(খ(্?)য)"
+  },
+  "kk": {
+    "transliterate": "(ক(্?)ক?)"
+  },
+  "kkh": {
+    "transliterate": "ক্ষ"
+  },
+  "kkhb": {
+    "transliterate": "ক্ষ্ব"
+  },
+  "kkhm": {
+    "transliterate": "ক্ষ্ম"
+  },
+  "kkhn": {
+    "transliterate": "ক্ষ্ণ"
+  },
+  "kkhnf": {
+    "transliterate": "ক্ষ্ণ"
+  },
+  "kkhz": {
+    "transliterate": "ক্ষ্য"
+  },
+  "kl": {
+    "transliterate": "(ক(্?)ল)"
+  },
+  "km": {
+    "transliterate": "(ক(্?)ম)"
+  },
+  "kr": {
+    "transliterate": "(ক(্?)র)"
+  },
+  "krf": {
+    "transliterate": "কড়"
+  },
+  "krff": {
+    "transliterate": "কঢ়"
+  },
+  "ks": {
+    "transliterate": "(ক(্?)স)"
+  },
+  "ksf": {
+    "transliterate": "ক্ষ"
+  },
+  "ksfb": {
+    "transliterate": "ক্ষ্ব"
+  },
+  "ksfm": {
+    "transliterate": "ক্ষ্ম"
+  },
+  "ksfn": {
+    "transliterate": "ক্ষ্ণ"
+  },
+  "ksfnf": {
+    "transliterate": "ক্ষ্ণ"
+  },
+  "ksfz": {
+    "transliterate": "ক্ষ্য"
+  },
+  "ksh": {
+    "transliterate": "কশ"
+  },
+  "kt": {
+    "transliterate": "(ক(্?)ত)"
+  },
+  "ktf": {
+    "transliterate": "(ক(্?)ট)"
+  },
+  "ktff": {
+    "transliterate": "কঠ"
+  },
+  "ktfh": {
+    "transliterate": "কঠ"
+  },
+  "ktfr": {
+    "transliterate": "(ক(্?)ট(্?)র)"
+  },
+  "ktfrf": {
+    "transliterate": "ক্টড়"
+  },
+  "ktfrff": {
+    "transliterate": "ক্টঢ়"
+  },
+  "kth": {
+    "transliterate": "কথ"
+  },
+  "ktr": {
+    "transliterate": "(ক(্?)ত(্?)র)"
+  },
+  "ktrf": {
+    "transliterate": "ক্তড়"
+  },
+  "ktrff": {
+    "transliterate": "ক্তঢ়"
+  },
+  "kz": {
+    "transliterate": "(ক(্?)য)"
+  },
+  "l": {
+    "transliterate": "ল"
+  },
+  "lb": {
+    "transliterate": "(ল(্?)ব)"
+  },
+  "ld": {
+    "transliterate": "লদ"
+  },
+  "ldf": {
+    "transliterate": "(ল(্?)ড)"
+  },
+  "ldh": {
+    "transliterate": "লধ"
+  },
+  "lg": {
+    "transliterate": "(ল(্?)গ)"
+  },
+  "lgh": {
+    "transliterate": "লঘ"
+  },
+  "lk": {
+    "transliterate": "(ল(্?)ক)"
+  },
+  "lkh": {
+    "transliterate": "লখ"
+  },
+  "lkz": {
+    "transliterate": "(ল(্?)ক(্?)য)"
+  },
+  "ll": {
+    "transliterate": "(ল(্?)ল?)"
+  },
+  "lm": {
+    "transliterate": "(ল(্?)ম)"
+  },
+  "lp": {
+    "transliterate": "(ল(্?)প)"
+  },
+  "lph": {
+    "transliterate": "(ল(্?)ফ)"
+  },
+  "lt": {
+    "transliterate": "লত"
+  },
+  "ltf": {
+    "transliterate": "(ল(্?)ট)"
+  },
+  "ltff": {
+    "transliterate": "লঠ"
+  },
+  "ltfh": {
+    "transliterate": "লঠ"
+  },
+  "lth": {
+    "transliterate": "লথ"
+  },
+  "lv": {
+    "transliterate": "ল্‌ভ"
+  },
+  "lz": {
+    "transliterate": "(ল(্?)য)"
+  },
+  "m": {
+    "transliterate": "ম"
+  },
+  "mb": {
+    "transliterate": "(ম(্?)ব)"
+  },
+  "mbr": {
+    "transliterate": "(ম(্?)ব(্?)র)"
+  },
+  "mbrf": {
+    "transliterate": "ম্বড়"
+  },
+  "mbrff": {
+    "transliterate": "ম্বঢ়"
+  },
+  "ml": {
+    "transliterate": "(ম(্?)ল)"
+  },
+  "mm": {
+    "transliterate": "(ম(্?)ম?)"
+  },
+  "mn": {
+    "transliterate": "(ম(্?)ন)"
+  },
+  "mp": {
+    "transliterate": "(ম(্?)প)"
+  },
+  "mph": {
+    "transliterate": "(ম(্?)ফ)"
+  },
+  "mpr": {
+    "transliterate": "(ম(্?)প(্?)র)"
+  },
+  "mprf": {
+    "transliterate": "ম্পড়"
+  },
+  "mprff": {
+    "transliterate": "ম্পঢ়"
+  },
+  "mr": {
+    "transliterate": "(ম(্?)র)"
+  },
+  "mrf": {
+    "transliterate": "মড়"
+  },
+  "mrff": {
+    "transliterate": "মঢ়"
+  },
+  "mv": {
+    "transliterate": "(ম(্?)ভ)"
+  },
+  "mvr": {
+    "transliterate": "(ম(্?)ভ(্?)র)"
+  },
+  "mvrf": {
+    "transliterate": "ম্ভড়"
+  },
+  "mvrff": {
+    "transliterate": "ম্ভঢ়"
+  },
+  "mz": {
+    "transliterate": "(ম(্?)য)"
+  },
+  "n": {
+    "transliterate": "ন"
+  },
+  "nb": {
+    "transliterate": "(ন(্?)ব)"
+  },
+  "nc": {
+    "transliterate": "(ঞ(্?)চ)"
+  },
+  "nch": {
+    "transliterate": "(ঞ(্?)ছ)"
+  },
+  "nd": {
+    "transliterate": "(ন(্?)দ)"
+  },
+  "ndb": {
+    "transliterate": "(ন(্?)দ(্?)ব)"
+  },
+  "ndf": {
+    "transliterate": "(ন(্?)ড)"
+  },
+  "ndff": {
+    "transliterate": "নঢ"
+  },
+  "ndfh": {
+    "transliterate": "নঢ"
+  },
+  "ndfr": {
+    "transliterate": "(ন(্?)ড(্?)র)"
+  },
+  "ndfrf": {
+    "transliterate": "ন্ডড়"
+  },
+  "ndfrff": {
+    "transliterate": "ন্ডঢ়"
+  },
+  "ndh": {
+    "transliterate": "(ন(্?)ধ)"
+  },
+  "ndhr": {
+    "transliterate": "(ন(্?)ধ(্?)র)"
+  },
+  "ndhrf": {
+    "transliterate": "ন্ধড়"
+  },
+  "ndhrff": {
+    "transliterate": "ন্ধঢ়"
+  },
+  "ndhz": {
+    "transliterate": "(ন(্?)ধ(্?)য)"
+  },
+  "ndr": {
+    "transliterate": "(ন(্?)দ(্?)র)"
+  },
+  "ndrf": {
+    "transliterate": "ন্দড়"
+  },
+  "ndrff": {
+    "transliterate": "ন্দঢ়"
+  },
+  "ndz": {
+    "transliterate": "(ন(্?)দ(্?)য)"
+  },
+  "nf": {
+    "transliterate": "ণ"
+  },
+  "nfb": {
+    "transliterate": "(ণ(্?)ব)"
+  },
+  "nfd": {
+    "transliterate": "ণদ"
+  },
+  "nfdf": {
+    "transliterate": "(ণ(্?)ড)"
+  },
+  "nfdff": {
+    "transliterate": "(ণ(্?)ঢ)"
+  },
+  "nfdfh": {
+    "transliterate": "(ণ(্?)ঢ)"
+  },
+  "nfdfr": {
+    "transliterate": "(ণ(্?)ড(্?)র)"
+  },
+  "nfdfrf": {
+    "transliterate": "ণ্ডড়"
+  },
+  "nfdfrff": {
+    "transliterate": "ণ্ডঢ়"
+  },
+  "nfdfz": {
+    "transliterate": "(ণ(্?)ড(্?)য)"
+  },
+  "nfdh": {
+    "transliterate": "ণধ"
+  },
+  "nff": {
+    "transliterate": "ঞ"
+  },
+  "nffc": {
+    "transliterate": "ঞ্চ"
+  },
+  "nffch": {
+    "transliterate": "ঞ্ছ"
+  },
+  "nffj": {
+    "transliterate": "ঞ্জ"
+  },
+  "nffjh": {
+    "transliterate": "ঞ্ঝ"
+  },
+  "nfm": {
+    "transliterate": "(ণ(্?)ম)"
+  },
+  "nfn": {
+    "transliterate": "(ণ(্?)ণ?)"
+  },
+  "nfnf": {
+    "transliterate": "(ণ(্?)ণ?)"
+  },
+  "nft": {
+    "transliterate": "ণত"
+  },
+  "nftf": {
+    "transliterate": "(ণ(্?)ট)"
+  },
+  "nftff": {
+    "transliterate": "(ণ(্?)ঠ)"
+  },
+  "nftffz": {
+    "transliterate": "(ণ(্?)ঠ(্?)য)"
+  },
+  "nftfh": {
+    "transliterate": "(ণ(্?)ঠ)"
+  },
+  "nftfhz": {
+    "transliterate": "(ণ(্?)ঠ(্?)য)"
+  },
+  "nfth": {
+    "transliterate": "ণথ"
+  },
+  "nfz": {
+    "transliterate": "(ণ(্?)য)"
+  },
+  "ng": {
+    "transliterate": "ং"
+  },
+  "nga": {
+    "transliterate": "ঙা"
+  },
+  "ngae": {
+    "transliterate": "ঙ্যা"
+  },
+  "nge": {
+    "transliterate": "ঙে"
+  },
+  "ngf": {
+    "transliterate": "ং"
+  },
+  "ngg": {
+    "transliterate": "(ঙ(্?)গ)"
+  },
+  "nggh": {
+    "transliterate": "(ঙ(্?)ঘ)"
+  },
+  "ngghr": {
+    "transliterate": "(ঙ(্?)ঘ(্?)র)"
+  },
+  "ngghrf": {
+    "transliterate": "ঙ্ঘড়"
+  },
+  "ngghrff": {
+    "transliterate": "ঙ্ঘঢ়"
+  },
+  "ngghz": {
+    "transliterate": "(ঙ(্?)ঘ(্?)য)"
+  },
+  "nggz": {
+    "transliterate": "(ঙ(্?)গ(্?)য)"
+  },
+  "ngi": {
+    "transliterate": "ঙি"
+  },
+  "ngii": {
+    "transliterate": "ঙী"
+  },
+  "ngk": {
+    "transliterate": "(ঙ(্?)ক)"
+  },
+  "ngkh": {
+    "transliterate": "(ঙ(্?)খ)"
+  },
+  "ngkk": {
+    "transliterate": "ঙ্কক"
+  },
+  "ngkkh": {
+    "transliterate": "ঙ্ক্ষ"
+  },
+  "ngkr": {
+    "transliterate": "(ঙ(্?)ক(্?)র)"
+  },
+  "ngkrf": {
+    "transliterate": "ঙ্কড়"
+  },
+  "ngkrff": {
+    "transliterate": "ঙ্কঢ়"
+  },
+  "ngks": {
+    "transliterate": "ঙ্কস"
+  },
+  "ngksf": {
+    "transliterate": "ঙ্ক্ষ"
+  },
+  "ngksh": {
+    "transliterate": "ঙ্কশ"
+  },
+  "ngkt": {
+    "transliterate": "ঙ্‌ক্ত"
+  },
+  "ngkth": {
+    "transliterate": "ঙ্কথ"
+  },
+  "ngkz": {
+    "transliterate": "(ঙ(্?)ক(্?)য)"
+  },
+  "ngm": {
+    "transliterate": "(ঙ(্?)ম)"
+  },
+  "ngo": {
+    "transliterate": "ঙ"
+  },
+  "ngoi": {
+    "transliterate": "ঙৈ"
+  },
+  "ngou": {
+    "transliterate": "ঙৌ"
+  },
+  "ngq": {
+    "transliterate": "ঙৃ"
+  },
+  "ngu": {
+    "transliterate": "ঙু"
+  },
+  "nguff": {
+    "transliterate": "ঙ"
+  },
+  "nguu": {
+    "transliterate": "ঙূ"
+  },
+  "nguuff": {
+    "transliterate": "ঙ"
+  },
+  "ngw": {
+    "transliterate": "ঙো"
+  },
+  "nj": {
+    "transliterate": "(ঞ(্?)জ)"
+  },
+  "njh": {
+    "transliterate": "(ঞ(্?)ঝ)"
+  },
+  "nm": {
+    "transliterate": "(ন(্?)ম)"
+  },
+  "nn": {
+    "transliterate": "(ন(্?)ন?)"
+  },
+  "ns": {
+    "transliterate": "(ন(্?)স)"
+  },
+  "nsh": {
+    "transliterate": "নশ"
+  },
+  "nt": {
+    "transliterate": "(ন(্?)ত)"
+  },
+  "ntb": {
+    "transliterate": "(ন(্?)ত(্?)ব)"
+  },
+  "ntf": {
+    "transliterate": "(ন(্?)ট)"
+  },
+  "ntff": {
+    "transliterate": "(ন(্?)ঠ)"
+  },
+  "ntfh": {
+    "transliterate": "(ন(্?)ঠ)"
+  },
+  "ntfr": {
+    "transliterate": "(ন(্?)ট(্?)র)"
+  },
+  "ntfrf": {
+    "transliterate": "ন্টড়"
+  },
+  "ntfrff": {
+    "transliterate": "ন্টঢ়"
+  },
+  "nth": {
+    "transliterate": "(ন(্?)থ)"
+  },
+  "nthr": {
+    "transliterate": "(ন(্?)থ(্?)র)"
+  },
+  "nthrf": {
+    "transliterate": "ন্থড়"
+  },
+  "nthrff": {
+    "transliterate": "ন্থঢ়"
+  },
+  "ntr": {
+    "transliterate": "(ন(্?)ত(্?)র)"
+  },
+  "ntrf": {
+    "transliterate": "ন্তড়"
+  },
+  "ntrff": {
+    "transliterate": "ন্তঢ়"
+  },
+  "ntrz": {
+    "transliterate": "(ন(্?)ত(্?)র(্?)য)"
+  },
+  "nz": {
+    "transliterate": "(ন(্?)য)"
+  },
+  "o": {
+    "transliterate": "([ওোঅ])?",
+    "entireBlockOptional": true
+  },
+  "of": {
+    "transliterate": "অ"
+  },
+  "oi": {
+    "transliterate": "(ঐ|ৈ)"
+  },
+  "oif": {
+    "transliterate": "ই"
+  },
+  "oo": {
+    "transliterate": "ঽ"
+  },
+  "ou": {
+    "transliterate": "(ঔ|ৌ)"
+  },
+  "ouf": {
+    "transliterate": "উ"
+  },
+  "p": {
+    "transliterate": "প"
+  },
+  "ph": {
+    "transliterate": "ফ"
+  },
+  "phl": {
+    "transliterate": "(ফ(্?)ল)"
+  },
+  "phr": {
+    "transliterate": "(ফ(্?)র)"
+  },
+  "phrf": {
+    "transliterate": "ফড়"
+  },
+  "phrff": {
+    "transliterate": "ফঢ়"
+  },
+  "pl": {
+    "transliterate": "(প(্?)ল)"
+  },
+  "pn": {
+    "transliterate": "(প(্?)ন)"
+  },
+  "pp": {
+    "transliterate": "(প(্?)প?)"
+  },
+  "pph": {
+    "transliterate": "পফ"
+  },
+  "pr": {
+    "transliterate": "(প(্?)র)"
+  },
+  "prf": {
+    "transliterate": "পড়"
+  },
+  "prff": {
+    "transliterate": "পঢ়"
+  },
+  "ps": {
+    "transliterate": "(প(্?)স)"
+  },
+  "psh": {
+    "transliterate": "পশ"
+  },
+  "pt": {
+    "transliterate": "(প(্?)ত)"
+  },
+  "ptf": {
+    "transliterate": "(প(্?)ট)"
+  },
+  "ptff": {
+    "transliterate": "পঠ"
+  },
+  "ptfh": {
+    "transliterate": "পঠ"
+  },
+  "pth": {
+    "transliterate": "পথ"
+  },
+  "pz": {
+    "transliterate": "(প(্?)য)"
+  },
+  "q": {
+    "transliterate": "(ঋ|ৃ)"
+  },
+  "qf": {
+    "transliterate": "ঋ"
+  },
+  "qff": {
+    "transliterate": "‌ৃ"
+  },
+  "qq": {
+    "transliterate": "্"
+  },
+  "r": {
+    "transliterate": "র"
+  },
+  "rf": {
+    "transliterate": "ড়"
+  },
+  "rff": {
+    "transliterate": "ঢ়"
+  },
+  "rfg": {
+    "transliterate": "ড়্‌গ"
+  },
+  "rfgh": {
+    "transliterate": "ড়ঘ"
+  },
+  "rr": {
+    "transliterate": "র্"
+  },
+  "rz": {
+    "transliterate": "র‍্য"
+  },
+  "s": {
+    "transliterate": "স"
+  },
+  "sb": {
+    "transliterate": "(স(্?)ব)"
+  },
+  "sf": {
+    "transliterate": "ষ"
+  },
+  "sfb": {
+    "transliterate": "(ষ(্?)ব)"
+  },
+  "sfk": {
+    "transliterate": "(ষ(্?)ক)"
+  },
+  "sfkh": {
+    "transliterate": "ষখ"
+  },
+  "sfkr": {
+    "transliterate": "(ষ(্?)ক(্?)র)"
+  },
+  "sfkrf": {
+    "transliterate": "ষ্কড়"
+  },
+  "sfkrff": {
+    "transliterate": "ষ্কঢ়"
+  },
+  "sfm": {
+    "transliterate": "(ষ(্?)ম)"
+  },
+  "sfn": {
+    "transliterate": "(ষ(্?)ণ)"
+  },
+  "sfnf": {
+    "transliterate": "(ষ(্?)ণ)"
+  },
+  "sfp": {
+    "transliterate": "(ষ(্?)প)"
+  },
+  "sfph": {
+    "transliterate": "(ষ(্?)ফ)"
+  },
+  "sfpr": {
+    "transliterate": "(ষ(্?)প(্?)র)"
+  },
+  "sfprf": {
+    "transliterate": "ষ্পড়"
+  },
+  "sfprff": {
+    "transliterate": "ষ্পঢ়"
+  },
+  "sft": {
+    "transliterate": "ষত"
+  },
+  "sftf": {
+    "transliterate": "(ষ(্?)ট)"
+  },
+  "sftff": {
+    "transliterate": "(ষ(্?)ঠ)"
+  },
+  "sftffz": {
+    "transliterate": "(ষ(্?)ঠ(্?)য)"
+  },
+  "sftfh": {
+    "transliterate": "(ষ(্?)ঠ)"
+  },
+  "sftfhz": {
+    "transliterate": "(ষ(্?)ঠ(্?)য)"
+  },
+  "sftfr": {
+    "transliterate": "(ষ(্?)ট(্?)র)"
+  },
+  "sftfrf": {
+    "transliterate": "ষ্টড়"
+  },
+  "sftfrff": {
+    "transliterate": "ষ্টঢ়"
+  },
+  "sftfz": {
+    "transliterate": "(ষ(্?)ট(্?)য)"
+  },
+  "sfth": {
+    "transliterate": "ষথ"
+  },
+  "sfz": {
+    "transliterate": "(ষ(্?)য)"
+  },
+  "sh": {
+    "transliterate": "শ"
+  },
+  "shb": {
+    "transliterate": "(শ(্?)ব)"
+  },
+  "shc": {
+    "transliterate": "(শ(্?)চ)"
+  },
+  "shch": {
+    "transliterate": "(শ(্?)ছ)"
+  },
+  "shl": {
+    "transliterate": "(শ(্?)ল)"
+  },
+  "shm": {
+    "transliterate": "(শ(্?)ম)"
+  },
+  "shn": {
+    "transliterate": "(শ(্?)ন)"
+  },
+  "shr": {
+    "transliterate": "(শ(্?)র)"
+  },
+  "shrf": {
+    "transliterate": "শড়"
+  },
+  "shrff": {
+    "transliterate": "শঢ়"
+  },
+  "shz": {
+    "transliterate": "(শ(্?)য)"
+  },
+  "sk": {
+    "transliterate": "(স(্?)ক)"
+  },
+  "skh": {
+    "transliterate": "(স(্?)খ)"
+  },
+  "skr": {
+    "transliterate": "(স(্?)ক(্?)র)"
+  },
+  "skrf": {
+    "transliterate": "স্কড়"
+  },
+  "skrff": {
+    "transliterate": "স্কঢ়"
+  },
+  "sl": {
+    "transliterate": "(স(্?)ল)"
+  },
+  "sm": {
+    "transliterate": "(স(্?)ম)"
+  },
+  "sn": {
+    "transliterate": "(স(্?)ন)"
+  },
+  "sp": {
+    "transliterate": "(স(্?)প)"
+  },
+  "sph": {
+    "transliterate": "(স(্?)ফ)"
+  },
+  "spl": {
+    "transliterate": "(স(্?)প(্?)ল)"
+  },
+  "spr": {
+    "transliterate": "(স(্?)প(্?)র)"
+  },
+  "sprf": {
+    "transliterate": "স্পড়"
+  },
+  "sprff": {
+    "transliterate": "স্পঢ়"
+  },
+  "sr": {
+    "transliterate": "(স(্?)র)"
+  },
+  "srf": {
+    "transliterate": "সড়"
+  },
+  "srff": {
+    "transliterate": "সঢ়"
+  },
+  "st": {
+    "transliterate": "(স(্?)ত)"
+  },
+  "stb": {
+    "transliterate": "(স(্?)ত(্?)ব)"
+  },
+  "stf": {
+    "transliterate": "(স(্?)ট)"
+  },
+  "stff": {
+    "transliterate": "সঠ"
+  },
+  "stfh": {
+    "transliterate": "সঠ"
+  },
+  "stfr": {
+    "transliterate": "(স(্?)ট(্?)র)"
+  },
+  "stfrf": {
+    "transliterate": "স্টড়"
+  },
+  "stfrff": {
+    "transliterate": "স্টঢ়"
+  },
+  "sth": {
+    "transliterate": "(স(্?)থ)"
+  },
+  "sthz": {
+    "transliterate": "(স(্?)থ(্?)য)"
+  },
+  "str": {
+    "transliterate": "(স(্?)ত(্?)র)"
+  },
+  "strf": {
+    "transliterate": "স্তড়"
+  },
+  "strff": {
+    "transliterate": "স্তঢ়"
+  },
+  "stz": {
+    "transliterate": "(স(্?)ত(্?)য)"
+  },
+  "sz": {
+    "transliterate": "(স(্?)য)"
+  },
+  "t": {
+    "transliterate": "ত"
+  },
+  "t/": {
+    "transliterate": "ৎ"
+  },
+  "tb": {
+    "transliterate": "(ত(্?)ব)"
+  },
+  "tf": {
+    "transliterate": "ট"
+  },
+  "tfb": {
+    "transliterate": "(ট(্?)ব)"
+  },
+  "tff": {
+    "transliterate": "ঠ"
+  },
+  "tfh": {
+    "transliterate": "ঠ"
+  },
+  "tfm": {
+    "transliterate": "(ট(্?)ম)"
+  },
+  "tfr": {
+    "transliterate": "(ট(্?)র)"
+  },
+  "tfrf": {
+    "transliterate": "টড়"
+  },
+  "tfrff": {
+    "transliterate": "টঢ়"
+  },
+  "tft": {
+    "transliterate": "টত"
+  },
+  "tftf": {
+    "transliterate": "(ট(্?)ট?)"
+  },
+  "tfth": {
+    "transliterate": "টথ"
+  },
+  "tfz": {
+    "transliterate": "(ট(্?)য)"
+  },
+  "th": {
+    "transliterate": "থ"
+  },
+  "thb": {
+    "transliterate": "(থ(্?)ব)"
+  },
+  "thr": {
+    "transliterate": "(থ(্?)র)"
+  },
+  "thrf": {
+    "transliterate": "থড়"
+  },
+  "thrff": {
+    "transliterate": "থঢ়"
+  },
+  "thz": {
+    "transliterate": "(থ(্?)য)"
+  },
+  "tm": {
+    "transliterate": "(ত(্?)ম)"
+  },
+  "tmz": {
+    "transliterate": "(ত(্?)ম(্?)য)"
+  },
+  "tn": {
+    "transliterate": "(ত(্?)ন)"
+  },
+  "tr": {
+    "transliterate": "(ত(্?)র)"
+  },
+  "trf": {
+    "transliterate": "তড়"
+  },
+  "trff": {
+    "transliterate": "তঢ়"
+  },
+  "trz": {
+    "transliterate": "(ত(্?)র(্?)য)"
+  },
+  "tt": {
+    "transliterate": "(ত(্?)ত?)"
+  },
+  "ttb": {
+    "transliterate": "(ত(্?)ত(্?)ব)"
+  },
+  "ttf": {
+    "transliterate": "(ট(্?)ট?)"
+  },
+  "tth": {
+    "transliterate": "(ত(্?)থ)"
+  },
+  "ttz": {
+    "transliterate": "(ত(্?)ত(্?)য)"
+  },
+  "tz": {
+    "transliterate": "(ত(্?)য)"
+  },
+  "u": {
+    "transliterate": "(উ|ু)"
+  },
+  "uf": {
+    "transliterate": "উ"
+  },
+  "uff": {
+    "transliterate": "‌ু"
+  },
+  "uu": {
+    "transliterate": "(ঊ|ূ)"
+  },
+  "uuf": {
+    "transliterate": "ঊ"
+  },
+  "uuff": {
+    "transliterate": "‌ূ"
+  },
+  "v": {
+    "transliterate": "ভ"
+  },
+  "vb": {
+    "transliterate": "(ভ(্?)ব)"
+  },
+  "vl": {
+    "transliterate": "(ভ(্?)ল)"
+  },
+  "vr": {
+    "transliterate": "(ভ(্?)র)"
+  },
+  "vrf": {
+    "transliterate": "ভড়"
+  },
+  "vrff": {
+    "transliterate": "ভঢ়"
+  },
+  "vz": {
+    "transliterate": "(ভ(্?)য)"
+  },
+  "w": {
+    "transliterate": "(ও|ো)"
+  },
+  "wa": {
+    "transliterate": "(ওয়া|োয়া)"
+  },
+  "wae": {
+    "transliterate": "ওয়্যা"
+  },
+  "waf": {
+    "transliterate": "ওয়া"
+  },
+  "we": {
+    "transliterate": "(ওয়ে|োয়ে)"
+  },
+  "wef": {
+    "transliterate": "ওয়ে"
+  },
+  "wf": {
+    "transliterate": "ও"
+  },
+  "x": {
+    "transliterate": "ঃ"
+  },
+  "xx": {
+    "transliterate": "্‌"
+  },
+  "y": {
+    "transliterate": "য়"
+  },
+  "z": {
+    "transliterate": "য"
+  },
+  "zz": {
+    "transliterate": "(য(্?)য?)"
+  }
+}

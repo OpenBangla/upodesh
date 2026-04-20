@@ -34,21 +34,27 @@
   },
   "bb": {
     "transliterate": [
+      "ব",
+      "বব",
+      "ব্",
       "ব্ব"
     ]
   },
   "bd": {
     "transliterate": [
+      "বদ",
       "ব্দ"
     ]
   },
   "bdh": {
     "transliterate": [
+      "বধ",
       "ব্ধ"
     ]
   },
   "bj": {
     "transliterate": [
+      "বজ",
       "ব্জ"
     ]
   },
@@ -59,11 +65,13 @@
   },
   "bl": {
     "transliterate": [
+      "বল",
       "ব্ল"
     ]
   },
   "br": {
     "transliterate": [
+      "বর",
       "ব্র"
     ]
   },
@@ -79,6 +87,7 @@
   },
   "bz": {
     "transliterate": [
+      "বয",
       "ব্য"
     ]
   },
@@ -89,26 +98,37 @@
   },
   "cb": {
     "transliterate": [
+      "চব",
       "চ্ব"
     ]
   },
   "cc": {
     "transliterate": [
+      "চ",
+      "চচ",
+      "চ্",
       "চ্চ"
     ]
   },
   "cch": {
     "transliterate": [
+      "চছ",
       "চ্ছ"
     ]
   },
   "cchb": {
     "transliterate": [
+      "চছব",
+      "চছ্ব",
+      "চ্ছব",
       "চ্ছ্ব"
     ]
   },
   "cchr": {
     "transliterate": [
+      "চছর",
+      "চছ্র",
+      "চ্ছর",
       "চ্ছ্র"
     ]
   },
@@ -139,11 +159,13 @@
   },
   "cnff": {
     "transliterate": [
+      "চঞ",
       "চ্ঞ"
     ]
   },
   "cz": {
     "transliterate": [
+      "চয",
       "চ্য"
     ]
   },
@@ -154,26 +176,37 @@
   },
   "db": {
     "transliterate": [
+      "দব",
       "দ্ব"
     ]
   },
   "dd": {
     "transliterate": [
+      "দ",
+      "দদ",
+      "দ্",
       "দ্দ"
     ]
   },
   "ddb": {
     "transliterate": [
+      "দদব",
+      "দদ্ব",
+      "দ্দব",
       "দ্দ্ব"
     ]
   },
   "ddf": {
     "transliterate": [
+      "ড",
+      "ডড",
+      "ড্",
       "ড্ড"
     ]
   },
   "ddh": {
     "transliterate": [
+      "দধ",
       "দ্ধ"
     ]
   },
@@ -184,6 +217,7 @@
   },
   "dfb": {
     "transliterate": [
+      "ডব",
       "ড্ব"
     ]
   },
@@ -194,6 +228,9 @@
   },
   "dfdf": {
     "transliterate": [
+      "ড",
+      "ডড",
+      "ড্",
       "ড্ড"
     ]
   },
@@ -219,6 +256,7 @@
   },
   "dffr": {
     "transliterate": [
+      "ঢর",
       "ঢ্র"
     ]
   },
@@ -234,6 +272,7 @@
   },
   "dffz": {
     "transliterate": [
+      "ঢয",
       "ঢ্য"
     ]
   },
@@ -244,6 +283,7 @@
   },
   "dfhr": {
     "transliterate": [
+      "ঢর",
       "ঢ্র"
     ]
   },
@@ -259,11 +299,13 @@
   },
   "dfhz": {
     "transliterate": [
+      "ঢয",
       "ঢ্য"
     ]
   },
   "dfr": {
     "transliterate": [
+      "ডর",
       "ড্র"
     ]
   },
@@ -279,6 +321,7 @@
   },
   "dfz": {
     "transliterate": [
+      "ডয",
       "ড্য"
     ]
   },
@@ -299,21 +342,25 @@
   },
   "dhb": {
     "transliterate": [
+      "ধব",
       "ধ্ব"
     ]
   },
   "dhm": {
     "transliterate": [
+      "ধম",
       "ধ্ম"
     ]
   },
   "dhn": {
     "transliterate": [
+      "ধন",
       "ধ্ন"
     ]
   },
   "dhr": {
     "transliterate": [
+      "ধর",
       "ধ্র"
     ]
   },
@@ -329,16 +376,19 @@
   },
   "dhz": {
     "transliterate": [
+      "ধয",
       "ধ্য"
     ]
   },
   "dm": {
     "transliterate": [
+      "দম",
       "দ্ম"
     ]
   },
   "dr": {
     "transliterate": [
+      "দর",
       "দ্র"
     ]
   },
@@ -354,16 +404,23 @@
   },
   "drz": {
     "transliterate": [
+      "দরয",
+      "দর্য",
+      "দ্রয",
       "দ্র্য"
     ]
   },
   "dv": {
     "transliterate": [
+      "দভ",
       "দ্ভ"
     ]
   },
   "dvr": {
     "transliterate": [
+      "দভর",
+      "দভ্র",
+      "দ্ভর",
       "দ্ভ্র"
     ]
   },
@@ -379,6 +436,7 @@
   },
   "dz": {
     "transliterate": [
+      "দয",
       "দ্য"
     ]
   },
@@ -480,6 +538,7 @@
   },
   "gb": {
     "transliterate": [
+      "গব",
       "গ্ব"
     ]
   },
@@ -500,11 +559,15 @@
   },
   "gdh": {
     "transliterate": [
+      "গধ",
       "গ্ধ"
     ]
   },
   "gdhr": {
     "transliterate": [
+      "গধর",
+      "গধ্র",
+      "গ্ধর",
       "গ্ধ্র"
     ]
   },
@@ -520,6 +583,9 @@
   },
   "gdhz": {
     "transliterate": [
+      "গধয",
+      "গধ্য",
+      "গ্ধয",
       "গ্ধ্য"
     ]
   },
@@ -530,6 +596,9 @@
   },
   "ggg": {
     "transliterate": [
+      "গ",
+      "গগ",
+      "গ্",
       "গ্গ"
     ]
   },
@@ -545,11 +614,13 @@
   },
   "ghn": {
     "transliterate": [
+      "ঘন",
       "ঘ্ন"
     ]
   },
   "ghr": {
     "transliterate": [
+      "ঘর",
       "ঘ্র"
     ]
   },
@@ -565,16 +636,19 @@
   },
   "gl": {
     "transliterate": [
+      "গল",
       "গ্ল"
     ]
   },
   "gm": {
     "transliterate": [
+      "গম",
       "গ্ম"
     ]
   },
   "gn": {
     "transliterate": [
+      "গন",
       "গ্ন"
     ]
   },
@@ -585,11 +659,15 @@
   },
   "gnz": {
     "transliterate": [
+      "গনয",
+      "গন্য",
+      "গ্নয",
       "গ্ন্য"
     ]
   },
   "gr": {
     "transliterate": [
+      "গর",
       "গ্র"
     ]
   },
@@ -605,11 +683,15 @@
   },
   "grz": {
     "transliterate": [
+      "গরয",
+      "গর্য",
+      "গ্রয",
       "গ্র্য"
     ]
   },
   "gz": {
     "transliterate": [
+      "গয",
       "গ্য"
     ]
   },
@@ -620,31 +702,37 @@
   },
   "hb": {
     "transliterate": [
+      "হব",
       "হ্ব"
     ]
   },
   "hl": {
     "transliterate": [
+      "হল",
       "হ্ল"
     ]
   },
   "hm": {
     "transliterate": [
+      "হম",
       "হ্ম"
     ]
   },
   "hn": {
     "transliterate": [
+      "হন",
       "হ্ন"
     ]
   },
   "hnf": {
     "transliterate": [
+      "হণ",
       "হ্ণ"
     ]
   },
   "hr": {
     "transliterate": [
+      "হর",
       "হ্র"
     ]
   },
@@ -660,6 +748,7 @@
   },
   "hz": {
     "transliterate": [
+      "হয",
       "হ্য"
     ]
   },
@@ -692,6 +781,7 @@
   },
   "jb": {
     "transliterate": [
+      "জব",
       "জ্ব"
     ]
   },
@@ -702,16 +792,23 @@
   },
   "jj": {
     "transliterate": [
+      "জ",
+      "জজ",
+      "জ্",
       "জ্জ"
     ]
   },
   "jjb": {
     "transliterate": [
+      "জজব",
+      "জজ্ব",
+      "জ্জব",
       "জ্জ্ব"
     ]
   },
   "jjh": {
     "transliterate": [
+      "জঝ",
       "জ্ঝ"
     ]
   },
@@ -727,16 +824,19 @@
   },
   "jnff": {
     "transliterate": [
+      "জঞ",
       "জ্ঞ"
     ]
   },
   "jr": {
     "transliterate": [
+      "জর",
       "জ্র"
     ]
   },
   "jz": {
     "transliterate": [
+      "জয",
       "জ্য"
     ]
   },
@@ -747,6 +847,7 @@
   },
   "kb": {
     "transliterate": [
+      "কব",
       "ক্ব"
     ]
   },
@@ -787,6 +888,7 @@
   },
   "khr": {
     "transliterate": [
+      "খর",
       "খ্র"
     ]
   },
@@ -802,11 +904,15 @@
   },
   "khz": {
     "transliterate": [
+      "খয",
       "খ্য"
     ]
   },
   "kk": {
     "transliterate": [
+      "ক",
+      "কক",
+      "ক্",
       "ক্ক"
     ]
   },
@@ -842,16 +948,19 @@
   },
   "kl": {
     "transliterate": [
+      "কল",
       "ক্ল"
     ]
   },
   "km": {
     "transliterate": [
+      "কম",
       "ক্ম"
     ]
   },
   "kr": {
     "transliterate": [
+      "কর",
       "ক্র"
     ]
   },
@@ -867,6 +976,7 @@
   },
   "ks": {
     "transliterate": [
+      "কস",
       "ক্স"
     ]
   },
@@ -907,11 +1017,13 @@
   },
   "kt": {
     "transliterate": [
+      "কত",
       "ক্ত"
     ]
   },
   "ktf": {
     "transliterate": [
+      "কট",
       "ক্ট"
     ]
   },
@@ -927,6 +1039,9 @@
   },
   "ktfr": {
     "transliterate": [
+      "কটর",
+      "কট্র",
+      "ক্টর",
       "ক্ট্র"
     ]
   },
@@ -947,6 +1062,9 @@
   },
   "ktr": {
     "transliterate": [
+      "কতর",
+      "কত্র",
+      "ক্তর",
       "ক্ত্র"
     ]
   },
@@ -962,6 +1080,7 @@
   },
   "kz": {
     "transliterate": [
+      "কয",
       "ক্য"
     ]
   },
@@ -972,6 +1091,7 @@
   },
   "lb": {
     "transliterate": [
+      "লব",
       "ল্ব"
     ]
   },
@@ -982,6 +1102,7 @@
   },
   "ldf": {
     "transliterate": [
+      "লড",
       "ল্ড"
     ]
   },
@@ -992,6 +1113,7 @@
   },
   "lg": {
     "transliterate": [
+      "লগ",
       "ল্গ"
     ]
   },
@@ -1002,6 +1124,7 @@
   },
   "lk": {
     "transliterate": [
+      "লক",
       "ল্ক"
     ]
   },
@@ -1012,26 +1135,35 @@
   },
   "lkz": {
     "transliterate": [
+      "লকয",
+      "লক্য",
+      "ল্কয",
       "ল্ক্য"
     ]
   },
   "ll": {
     "transliterate": [
+      "ল",
+      "লল",
+      "ল্",
       "ল্ল"
     ]
   },
   "lm": {
     "transliterate": [
+      "লম",
       "ল্ম"
     ]
   },
   "lp": {
     "transliterate": [
+      "লপ",
       "ল্প"
     ]
   },
   "lph": {
     "transliterate": [
+      "লফ",
       "ল্ফ"
     ]
   },
@@ -1042,6 +1174,7 @@
   },
   "ltf": {
     "transliterate": [
+      "লট",
       "ল্ট"
     ]
   },
@@ -1067,6 +1200,7 @@
   },
   "lz": {
     "transliterate": [
+      "লয",
       "ল্য"
     ]
   },
@@ -1077,11 +1211,15 @@
   },
   "mb": {
     "transliterate": [
+      "মব",
       "ম্ব"
     ]
   },
   "mbr": {
     "transliterate": [
+      "মবর",
+      "মব্র",
+      "ম্বর",
       "ম্ব্র"
     ]
   },
@@ -1097,31 +1235,41 @@
   },
   "ml": {
     "transliterate": [
+      "মল",
       "ম্ল"
     ]
   },
   "mm": {
     "transliterate": [
+      "ম",
+      "মম",
+      "ম্",
       "ম্ম"
     ]
   },
   "mn": {
     "transliterate": [
+      "মন",
       "ম্ন"
     ]
   },
   "mp": {
     "transliterate": [
+      "মপ",
       "ম্প"
     ]
   },
   "mph": {
     "transliterate": [
+      "মফ",
       "ম্ফ"
     ]
   },
   "mpr": {
     "transliterate": [
+      "মপর",
+      "মপ্র",
+      "ম্পর",
       "ম্প্র"
     ]
   },
@@ -1137,6 +1285,7 @@
   },
   "mr": {
     "transliterate": [
+      "মর",
       "ম্র"
     ]
   },
@@ -1152,11 +1301,15 @@
   },
   "mv": {
     "transliterate": [
+      "মভ",
       "ম্ভ"
     ]
   },
   "mvr": {
     "transliterate": [
+      "মভর",
+      "মভ্র",
+      "ম্ভর",
       "ম্ভ্র"
     ]
   },
@@ -1172,6 +1325,7 @@
   },
   "mz": {
     "transliterate": [
+      "ময",
       "ম্য"
     ]
   },
@@ -1182,31 +1336,39 @@
   },
   "nb": {
     "transliterate": [
+      "নব",
       "ন্ব"
     ]
   },
   "nc": {
     "transliterate": [
+      "ঞচ",
       "ঞ্চ"
     ]
   },
   "nch": {
     "transliterate": [
+      "ঞছ",
       "ঞ্ছ"
     ]
   },
   "nd": {
     "transliterate": [
+      "নদ",
       "ন্দ"
     ]
   },
   "ndb": {
     "transliterate": [
+      "নদব",
+      "নদ্ব",
+      "ন্দব",
       "ন্দ্ব"
     ]
   },
   "ndf": {
     "transliterate": [
+      "নড",
       "ন্ড"
     ]
   },
@@ -1222,6 +1384,9 @@
   },
   "ndfr": {
     "transliterate": [
+      "নডর",
+      "নড্র",
+      "ন্ডর",
       "ন্ড্র"
     ]
   },
@@ -1237,11 +1402,15 @@
   },
   "ndh": {
     "transliterate": [
+      "নধ",
       "ন্ধ"
     ]
   },
   "ndhr": {
     "transliterate": [
+      "নধর",
+      "নধ্র",
+      "ন্ধর",
       "ন্ধ্র"
     ]
   },
@@ -1257,11 +1426,17 @@
   },
   "ndhz": {
     "transliterate": [
+      "নধয",
+      "নধ্য",
+      "ন্ধয",
       "ন্ধ্য"
     ]
   },
   "ndr": {
     "transliterate": [
+      "নদর",
+      "নদ্র",
+      "ন্দর",
       "ন্দ্র"
     ]
   },
@@ -1277,6 +1452,9 @@
   },
   "ndz": {
     "transliterate": [
+      "নদয",
+      "নদ্য",
+      "ন্দয",
       "ন্দ্য"
     ]
   },
@@ -1287,6 +1465,7 @@
   },
   "nfb": {
     "transliterate": [
+      "ণব",
       "ণ্ব"
     ]
   },
@@ -1297,21 +1476,27 @@
   },
   "nfdf": {
     "transliterate": [
+      "ণড",
       "ণ্ড"
     ]
   },
   "nfdff": {
     "transliterate": [
+      "ণঢ",
       "ণ্ঢ"
     ]
   },
   "nfdfh": {
     "transliterate": [
+      "ণঢ",
       "ণ্ঢ"
     ]
   },
   "nfdfr": {
     "transliterate": [
+      "ণডর",
+      "ণড্র",
+      "ণ্ডর",
       "ণ্ড্র"
     ]
   },
@@ -1327,6 +1512,9 @@
   },
   "nfdfz": {
     "transliterate": [
+      "ণডয",
+      "ণড্য",
+      "ণ্ডয",
       "ণ্ড্য"
     ]
   },
@@ -1362,16 +1550,23 @@
   },
   "nfm": {
     "transliterate": [
+      "ণম",
       "ণ্ম"
     ]
   },
   "nfn": {
     "transliterate": [
+      "ণ",
+      "ণণ",
+      "ণ্",
       "ণ্ণ"
     ]
   },
   "nfnf": {
     "transliterate": [
+      "ণ",
+      "ণণ",
+      "ণ্",
       "ণ্ণ"
     ]
   },
@@ -1382,26 +1577,35 @@
   },
   "nftf": {
     "transliterate": [
+      "ণট",
       "ণ্ট"
     ]
   },
   "nftff": {
     "transliterate": [
+      "ণঠ",
       "ণ্ঠ"
     ]
   },
   "nftffz": {
     "transliterate": [
+      "ণঠয",
+      "ণঠ্য",
+      "ণ্ঠয",
       "ণ্ঠ্য"
     ]
   },
   "nftfh": {
     "transliterate": [
+      "ণঠ",
       "ণ্ঠ"
     ]
   },
   "nftfhz": {
     "transliterate": [
+      "ণঠয",
+      "ণঠ্য",
+      "ণ্ঠয",
       "ণ্ঠ্য"
     ]
   },
@@ -1412,6 +1616,7 @@
   },
   "nfz": {
     "transliterate": [
+      "ণয",
       "ণ্য"
     ]
   },
@@ -1442,16 +1647,21 @@
   },
   "ngg": {
     "transliterate": [
+      "ঙগ",
       "ঙ্গ"
     ]
   },
   "nggh": {
     "transliterate": [
+      "ঙঘ",
       "ঙ্ঘ"
     ]
   },
   "ngghr": {
     "transliterate": [
+      "ঙঘর",
+      "ঙঘ্র",
+      "ঙ্ঘর",
       "ঙ্ঘ্র"
     ]
   },
@@ -1467,11 +1677,17 @@
   },
   "ngghz": {
     "transliterate": [
+      "ঙঘয",
+      "ঙঘ্য",
+      "ঙ্ঘয",
       "ঙ্ঘ্য"
     ]
   },
   "nggz": {
     "transliterate": [
+      "ঙগয",
+      "ঙগ্য",
+      "ঙ্গয",
       "ঙ্গ্য"
     ]
   },
@@ -1487,11 +1703,13 @@
   },
   "ngk": {
     "transliterate": [
+      "ঙক",
       "ঙ্ক"
     ]
   },
   "ngkh": {
     "transliterate": [
+      "ঙখ",
       "ঙ্খ"
     ]
   },
@@ -1507,6 +1725,9 @@
   },
   "ngkr": {
     "transliterate": [
+      "ঙকর",
+      "ঙক্র",
+      "ঙ্কর",
       "ঙ্ক্র"
     ]
   },
@@ -1547,11 +1768,15 @@
   },
   "ngkz": {
     "transliterate": [
+      "ঙকয",
+      "ঙক্য",
+      "ঙ্কয",
       "ঙ্ক্য"
     ]
   },
   "ngm": {
     "transliterate": [
+      "ঙম",
       "ঙ্ম"
     ]
   },
@@ -1602,26 +1827,33 @@
   },
   "nj": {
     "transliterate": [
+      "ঞজ",
       "ঞ্জ"
     ]
   },
   "njh": {
     "transliterate": [
+      "ঞঝ",
       "ঞ্ঝ"
     ]
   },
   "nm": {
     "transliterate": [
+      "নম",
       "ন্ম"
     ]
   },
   "nn": {
     "transliterate": [
+      "ন",
+      "নন",
+      "ন্",
       "ন্ন"
     ]
   },
   "ns": {
     "transliterate": [
+      "নস",
       "ন্স"
     ]
   },
@@ -1632,31 +1864,41 @@
   },
   "nt": {
     "transliterate": [
+      "নত",
       "ন্ত"
     ]
   },
   "ntb": {
     "transliterate": [
+      "নতব",
+      "নত্ব",
+      "ন্তব",
       "ন্ত্ব"
     ]
   },
   "ntf": {
     "transliterate": [
+      "নট",
       "ন্ট"
     ]
   },
   "ntff": {
     "transliterate": [
+      "নঠ",
       "ন্ঠ"
     ]
   },
   "ntfh": {
     "transliterate": [
+      "নঠ",
       "ন্ঠ"
     ]
   },
   "ntfr": {
     "transliterate": [
+      "নটর",
+      "নট্র",
+      "ন্টর",
       "ন্ট্র"
     ]
   },
@@ -1672,11 +1914,15 @@
   },
   "nth": {
     "transliterate": [
+      "নথ",
       "ন্থ"
     ]
   },
   "nthr": {
     "transliterate": [
+      "নথর",
+      "নথ্র",
+      "ন্থর",
       "ন্থ্র"
     ]
   },
@@ -1692,6 +1938,9 @@
   },
   "ntr": {
     "transliterate": [
+      "নতর",
+      "নত্র",
+      "ন্তর",
       "ন্ত্র"
     ]
   },
@@ -1707,17 +1956,27 @@
   },
   "ntrz": {
     "transliterate": [
+      "নতরয",
+      "নতর্য",
+      "নত্রয",
+      "নত্র্য",
+      "ন্তরয",
+      "ন্তর্য",
+      "ন্ত্রয",
       "ন্ত্র্য"
     ]
   },
   "nz": {
     "transliterate": [
+      "নয",
       "ন্য"
     ]
   },
   "o": {
     "transliterate": [
-      "অ"
+      "অ",
+      "ও",
+      "ো"
     ],
     "entireBlockOptional": true
   },
@@ -1765,11 +2024,13 @@
   },
   "phl": {
     "transliterate": [
+      "ফল",
       "ফ্ল"
     ]
   },
   "phr": {
     "transliterate": [
+      "ফর",
       "ফ্র"
     ]
   },
@@ -1785,16 +2046,21 @@
   },
   "pl": {
     "transliterate": [
+      "পল",
       "প্ল"
     ]
   },
   "pn": {
     "transliterate": [
+      "পন",
       "প্ন"
     ]
   },
   "pp": {
     "transliterate": [
+      "প",
+      "পপ",
+      "প্",
       "প্প"
     ]
   },
@@ -1805,6 +2071,7 @@
   },
   "pr": {
     "transliterate": [
+      "পর",
       "প্র"
     ]
   },
@@ -1820,6 +2087,7 @@
   },
   "ps": {
     "transliterate": [
+      "পস",
       "প্স"
     ]
   },
@@ -1830,11 +2098,13 @@
   },
   "pt": {
     "transliterate": [
+      "পত",
       "প্ত"
     ]
   },
   "ptf": {
     "transliterate": [
+      "পট",
       "প্ট"
     ]
   },
@@ -1855,6 +2125,7 @@
   },
   "pz": {
     "transliterate": [
+      "পয",
       "প্য"
     ]
   },
@@ -1921,6 +2192,7 @@
   },
   "sb": {
     "transliterate": [
+      "সব",
       "স্ব"
     ]
   },
@@ -1931,11 +2203,13 @@
   },
   "sfb": {
     "transliterate": [
+      "ষব",
       "ষ্ব"
     ]
   },
   "sfk": {
     "transliterate": [
+      "ষক",
       "ষ্ক"
     ]
   },
@@ -1946,6 +2220,9 @@
   },
   "sfkr": {
     "transliterate": [
+      "ষকর",
+      "ষক্র",
+      "ষ্কর",
       "ষ্ক্র"
     ]
   },
@@ -1961,31 +2238,39 @@
   },
   "sfm": {
     "transliterate": [
+      "ষম",
       "ষ্ম"
     ]
   },
   "sfn": {
     "transliterate": [
+      "ষণ",
       "ষ্ণ"
     ]
   },
   "sfnf": {
     "transliterate": [
+      "ষণ",
       "ষ্ণ"
     ]
   },
   "sfp": {
     "transliterate": [
+      "ষপ",
       "ষ্প"
     ]
   },
   "sfph": {
     "transliterate": [
+      "ষফ",
       "ষ্ফ"
     ]
   },
   "sfpr": {
     "transliterate": [
+      "ষপর",
+      "ষপ্র",
+      "ষ্পর",
       "ষ্প্র"
     ]
   },
@@ -2006,31 +2291,43 @@
   },
   "sftf": {
     "transliterate": [
+      "ষট",
       "ষ্ট"
     ]
   },
   "sftff": {
     "transliterate": [
+      "ষঠ",
       "ষ্ঠ"
     ]
   },
   "sftffz": {
     "transliterate": [
+      "ষঠয",
+      "ষঠ্য",
+      "ষ্ঠয",
       "ষ্ঠ্য"
     ]
   },
   "sftfh": {
     "transliterate": [
+      "ষঠ",
       "ষ্ঠ"
     ]
   },
   "sftfhz": {
     "transliterate": [
+      "ষঠয",
+      "ষঠ্য",
+      "ষ্ঠয",
       "ষ্ঠ্য"
     ]
   },
   "sftfr": {
     "transliterate": [
+      "ষটর",
+      "ষট্র",
+      "ষ্টর",
       "ষ্ট্র"
     ]
   },
@@ -2046,6 +2343,9 @@
   },
   "sftfz": {
     "transliterate": [
+      "ষটয",
+      "ষট্য",
+      "ষ্টয",
       "ষ্ট্য"
     ]
   },
@@ -2056,6 +2356,7 @@
   },
   "sfz": {
     "transliterate": [
+      "ষয",
       "ষ্য"
     ]
   },
@@ -2066,36 +2367,43 @@
   },
   "shb": {
     "transliterate": [
+      "শব",
       "শ্ব"
     ]
   },
   "shc": {
     "transliterate": [
+      "শচ",
       "শ্চ"
     ]
   },
   "shch": {
     "transliterate": [
+      "শছ",
       "শ্ছ"
     ]
   },
   "shl": {
     "transliterate": [
+      "শল",
       "শ্ল"
     ]
   },
   "shm": {
     "transliterate": [
+      "শম",
       "শ্ম"
     ]
   },
   "shn": {
     "transliterate": [
+      "শন",
       "শ্ন"
     ]
   },
   "shr": {
     "transliterate": [
+      "শর",
       "শ্র"
     ]
   },
@@ -2111,21 +2419,27 @@
   },
   "shz": {
     "transliterate": [
+      "শয",
       "শ্য"
     ]
   },
   "sk": {
     "transliterate": [
+      "সক",
       "স্ক"
     ]
   },
   "skh": {
     "transliterate": [
+      "সখ",
       "স্খ"
     ]
   },
   "skr": {
     "transliterate": [
+      "সকর",
+      "সক্র",
+      "স্কর",
       "স্ক্র"
     ]
   },
@@ -2141,36 +2455,47 @@
   },
   "sl": {
     "transliterate": [
+      "সল",
       "স্ল"
     ]
   },
   "sm": {
     "transliterate": [
+      "সম",
       "স্ম"
     ]
   },
   "sn": {
     "transliterate": [
+      "সন",
       "স্ন"
     ]
   },
   "sp": {
     "transliterate": [
+      "সপ",
       "স্প"
     ]
   },
   "sph": {
     "transliterate": [
+      "সফ",
       "স্ফ"
     ]
   },
   "spl": {
     "transliterate": [
+      "সপল",
+      "সপ্ল",
+      "স্পল",
       "স্প্ল"
     ]
   },
   "spr": {
     "transliterate": [
+      "সপর",
+      "সপ্র",
+      "স্পর",
       "স্প্র"
     ]
   },
@@ -2186,6 +2511,7 @@
   },
   "sr": {
     "transliterate": [
+      "সর",
       "স্র"
     ]
   },
@@ -2201,16 +2527,21 @@
   },
   "st": {
     "transliterate": [
+      "সত",
       "স্ত"
     ]
   },
   "stb": {
     "transliterate": [
+      "সতব",
+      "সত্ব",
+      "স্তব",
       "স্ত্ব"
     ]
   },
   "stf": {
     "transliterate": [
+      "সট",
       "স্ট"
     ]
   },
@@ -2226,6 +2557,9 @@
   },
   "stfr": {
     "transliterate": [
+      "সটর",
+      "সট্র",
+      "স্টর",
       "স্ট্র"
     ]
   },
@@ -2241,16 +2575,23 @@
   },
   "sth": {
     "transliterate": [
+      "সথ",
       "স্থ"
     ]
   },
   "sthz": {
     "transliterate": [
+      "সথয",
+      "সথ্য",
+      "স্থয",
       "স্থ্য"
     ]
   },
   "str": {
     "transliterate": [
+      "সতর",
+      "সত্র",
+      "স্তর",
       "স্ত্র"
     ]
   },
@@ -2266,11 +2607,15 @@
   },
   "stz": {
     "transliterate": [
+      "সতয",
+      "সত্য",
+      "স্তয",
       "স্ত্য"
     ]
   },
   "sz": {
     "transliterate": [
+      "সয",
       "স্য"
     ]
   },
@@ -2286,6 +2631,7 @@
   },
   "tb": {
     "transliterate": [
+      "তব",
       "ত্ব"
     ]
   },
@@ -2296,6 +2642,7 @@
   },
   "tfb": {
     "transliterate": [
+      "টব",
       "ট্ব"
     ]
   },
@@ -2311,11 +2658,13 @@
   },
   "tfm": {
     "transliterate": [
+      "টম",
       "ট্ম"
     ]
   },
   "tfr": {
     "transliterate": [
+      "টর",
       "ট্র"
     ]
   },
@@ -2336,6 +2685,9 @@
   },
   "tftf": {
     "transliterate": [
+      "ট",
+      "টট",
+      "ট্",
       "ট্ট"
     ]
   },
@@ -2346,6 +2698,7 @@
   },
   "tfz": {
     "transliterate": [
+      "টয",
       "ট্য"
     ]
   },
@@ -2356,11 +2709,13 @@
   },
   "thb": {
     "transliterate": [
+      "থব",
       "থ্ব"
     ]
   },
   "thr": {
     "transliterate": [
+      "থর",
       "থ্র"
     ]
   },
@@ -2376,26 +2731,33 @@
   },
   "thz": {
     "transliterate": [
+      "থয",
       "থ্য"
     ]
   },
   "tm": {
     "transliterate": [
+      "তম",
       "ত্ম"
     ]
   },
   "tmz": {
     "transliterate": [
+      "তময",
+      "তম্য",
+      "ত্ময",
       "ত্ম্য"
     ]
   },
   "tn": {
     "transliterate": [
+      "তন",
       "ত্ন"
     ]
   },
   "tr": {
     "transliterate": [
+      "তর",
       "ত্র"
     ]
   },
@@ -2411,36 +2773,53 @@
   },
   "trz": {
     "transliterate": [
+      "তরয",
+      "তর্য",
+      "ত্রয",
       "ত্র্য"
     ]
   },
   "tt": {
     "transliterate": [
+      "ত",
+      "তত",
+      "ত্",
       "ত্ত"
     ]
   },
   "ttb": {
     "transliterate": [
+      "ততব",
+      "তত্ব",
+      "ত্তব",
       "ত্ত্ব"
     ]
   },
   "ttf": {
     "transliterate": [
+      "ট",
+      "টট",
+      "ট্",
       "ট্ট"
     ]
   },
   "tth": {
     "transliterate": [
+      "তথ",
       "ত্থ"
     ]
   },
   "ttz": {
     "transliterate": [
+      "ততয",
+      "তত্য",
+      "ত্তয",
       "ত্ত্য"
     ]
   },
   "tz": {
     "transliterate": [
+      "তয",
       "ত্য"
     ]
   },
@@ -2483,16 +2862,19 @@
   },
   "vb": {
     "transliterate": [
+      "ভব",
       "ভ্ব"
     ]
   },
   "vl": {
     "transliterate": [
+      "ভল",
       "ভ্ল"
     ]
   },
   "vr": {
     "transliterate": [
+      "ভর",
       "ভ্র"
     ]
   },
@@ -2508,6 +2890,7 @@
   },
   "vz": {
     "transliterate": [
+      "ভয",
       "ভ্য"
     ]
   },
@@ -2571,6 +2954,9 @@
   },
   "zz": {
     "transliterate": [
+      "য",
+      "যয",
+      "য্",
       "য্য"
     ]
   }
