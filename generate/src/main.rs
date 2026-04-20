@@ -49,18 +49,13 @@ fn generate_words_fst() {
     fst.finish().expect("Failed to finish words FST generation");
 }
 
-fn generate_patterns_fst() {
-    let root = PathBuf::from(var_os("CARGO_MANIFEST_DIR").unwrap());
-    let parent = root.parent().unwrap();
-    let dest = parent.join("src").join("avro").join("patterns.fst");
-
-    let file = File::create(dest).expect("Failed to create patterns.fst");
+fn generate_patterns_fst_from(source: &str, dest_path: PathBuf) {
+    let file = File::create(&dest_path).expect("Failed to create patterns.fst");
     let writer = BufWriter::new(file);
 
     let mut fst = Builder::new(writer).unwrap();
     let patterns: HashMap<String, Block> = serde_json::from_slice(
-        &read(parent.join("data/preprocessed-patterns.json"))
-            .expect("Failed to read source patterns file"),
+        &read(source).expect("Failed to read source patterns file"),
     )
     .unwrap();
 
@@ -76,6 +71,24 @@ fn generate_patterns_fst() {
 
     fst.finish()
         .expect("Failed to finish patterns FST generation");
+}
+
+fn generate_patterns_fst() {
+    let root = PathBuf::from(var_os("CARGO_MANIFEST_DIR").unwrap());
+    let parent = root.parent().unwrap();
+    generate_patterns_fst_from(
+        parent.join("data/preprocessed-patterns.json").to_str().unwrap(),
+        parent.join("src").join("avro").join("patterns.fst"),
+    );
+}
+
+fn generate_khipro_patterns_fst() {
+    let root = PathBuf::from(var_os("CARGO_MANIFEST_DIR").unwrap());
+    let parent = root.parent().unwrap();
+    generate_patterns_fst_from(
+        parent.join("data/khipro-preprocessed-patterns.json").to_str().unwrap(),
+        parent.join("src").join("khipro").join("patterns.fst"),
+    );
 }
 
 fn generate_regex_exploded_patterns(source: &str, dest: &str) {
@@ -130,5 +143,6 @@ fn main() {
     } else {
         generate_words_fst();
         generate_patterns_fst();
+        generate_khipro_patterns_fst();
     }
 }
