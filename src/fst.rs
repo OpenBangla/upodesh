@@ -12,11 +12,11 @@ impl<D: AsRef<[u8]>> FstTree<D> {
     }
 
     pub fn match_longest_common_prefix<'a>(&self, prefix: &'a str) -> (&'a str, &'a str, bool) {
-        let mut iter = prefix.chars();
+        let iter = prefix.chars();
         let mut index = 0;
         let mut node = self.fst.root();
 
-        while let Some(c) = iter.next() {
+        for c in iter {
             match node.find_input(c as u8) {
                 Some(addr) => {
                     node = self.fst.node(node.transition_addr(addr));
@@ -32,15 +32,13 @@ impl<D: AsRef<[u8]>> FstTree<D> {
     }
 
     pub fn matching_node<'a>(&'a self, word: &str) -> Option<FstNode<'a, D>> {
-        let mut iter = word.chars();
+        let iter = word.chars();
         let mut node = self.fst.root();
 
-        while let Some(c) = iter.next() {
-            match node.find_input(c as u8) {
-                Some(addr) => {
-                    node = self.fst.node(node.transition_addr(addr));
-                }
-                None => return None,
+        for c in iter {
+            {
+                let addr = node.find_input(c as u8)?;
+                node = self.fst.node(node.transition_addr(addr));
             }
         }
 
@@ -80,15 +78,13 @@ pub struct FstNode<'a, D: AsRef<[u8]>> {
 
 impl<'a, D: AsRef<[u8]>> FstNode<'a, D> {
     pub fn get_matching_node(&self, suffix: &str) -> Option<FstNode<'a, D>> {
-        let mut iter = suffix.chars();
+        let iter = suffix.chars();
         let mut node = self.node;
 
-        while let Some(c) = iter.next() {
-            match node.find_input(c as u8) {
-                Some(addr) => {
-                    node = self.fst.node(node.transition_addr(addr));
-                }
-                None => return None,
+        for c in iter {
+            {
+                let addr = node.find_input(c as u8)?;
+                node = self.fst.node(node.transition_addr(addr));
             }
         }
 
@@ -104,11 +100,9 @@ impl<'a, D: AsRef<[u8]>> FstNode<'a, D> {
     pub fn get_matching_node_by_char(&self, suffix: char) -> Option<FstNode<'a, D>> {
         let mut node = self.node;
 
-        match node.find_input(suffix as u8) {
-            Some(addr) => {
-                node = self.fst.node(node.transition_addr(addr));
-            }
-            None => return None,
+        {
+            let addr = node.find_input(suffix as u8)?;
+            node = self.fst.node(node.transition_addr(addr));
         }
 
         Some(FstNode {

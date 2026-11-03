@@ -1,7 +1,7 @@
 use std::{collections::HashMap, hint::black_box};
 
 use ahash::RandomState;
-use criterion::{criterion_group, criterion_main, Criterion};
+use criterion::{Criterion, criterion_group, criterion_main};
 use okkhor::regex_suggestion::RegexSuggestion;
 use regex::Regex;
 
@@ -173,8 +173,8 @@ fn regex_bangla_benchmark(c: &mut Criterion) {
         };
 
         let regex = format!(
-        "^{word}[অআইঈউঊঋএঐওঔঌৡািীুূৃেৈোৌকখগঘঙচছজঝঞটঠডঢণতথদধনপফবভমযরলশষসহৎড়ঢ়য়ংঃঁ\u{09CD}]{{0,{need_chars_upto}}}$"
-    );
+            "^{word}[অআইঈউঊঋএঐওঔঌৡািীুূৃেৈোৌকখগঘঙচছজঝঞটঠডঢণতথদধনপফবভমযরলশষসহৎড়ঢ়য়ংঃঁ\u{09CD}]{{0,{need_chars_upto}}}$"
+        );
         let rgx = Regex::new(&regex).unwrap();
 
         let database: HashMap<String, Vec<String>, RandomState> =
@@ -183,7 +183,7 @@ fn regex_bangla_benchmark(c: &mut Criterion) {
         database
             .get(table)
             .unwrap()
-            .into_iter()
+            .iter()
             .filter(|i| rgx.is_match(i))
             .cloned()
             .collect()

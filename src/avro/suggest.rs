@@ -3,7 +3,7 @@ use std::collections::{HashMap, HashSet};
 use once_cell::sync::Lazy;
 use serde::Deserialize;
 
-use crate::{fst::FstTree, WORDS};
+use crate::{WORDS, fst::FstTree};
 
 static PATTERNS: Lazy<FstTree<&[u8]>> =
     Lazy::new(|| FstTree::from_fst(include_bytes!("patterns.fst")));
@@ -100,7 +100,7 @@ impl Suggest {
             if self
                 .patterns
                 .get(new_matched)
-                .map_or(false, |v| v.entire_block_optional.is_some())
+                .is_some_and(|v| v.entire_block_optional.is_some())
             {
                 // Entirely optional patterns like "([ওোঅ]|(অ্য)|(য়ো?))?" may not yield any result
                 matched_nodes.extend(new_matched_nodes);
@@ -124,6 +124,12 @@ impl Suggest {
             .filter_map(|n| n.get_word())
             .collect();
         suggestions.into_iter().collect()
+    }
+}
+
+impl Default for Suggest {
+    fn default() -> Self {
+        Self::new()
     }
 }
 
@@ -162,6 +168,8 @@ mod tests {
         assert_eq!(fix_string("o!o"), "OO");
         assert_eq!(fix_string("osomapto"), "Osomapto");
         assert_eq!(fix_string("6t``"), "6t``");
+        assert_eq!(fix_string("!o"), "O"); // punctuation before o
+        assert_eq!(fix_string("!o!o"), "OO");
     }
 
     #[test]

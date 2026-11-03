@@ -88,7 +88,7 @@ pub(crate) fn search_dictionary(word: &str) -> Vec<String> {
     database
         .get(table)
         .unwrap()
-        .into_iter()
+        .iter()
         .filter(|i| rgx.is_match(i))
         .cloned()
         .collect()

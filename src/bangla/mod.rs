@@ -15,7 +15,7 @@ pub fn suggest(word: &str) -> Vec<String> {
     if word.is_empty() {
         return Vec::new();
     }
-    
+
     let words = Lazy::force(&WORDS);
 
     let need_chars_upto = match word.chars().count() {
@@ -48,14 +48,12 @@ pub fn suggest(word: &str) -> Vec<String> {
         nodes.extend(new_nodes);
     }
 
-    let suggestions = nodes
+    nodes
         .into_iter()
         .filter_map(|n| n.get_word())
         .collect::<HashSet<_>>()
         .into_iter()
-        .collect::<Vec<_>>();
-
-    suggestions
+        .collect::<Vec<_>>()
 }
 
 #[cfg(test)]
