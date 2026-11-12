@@ -38,10 +38,11 @@ const VOWEL_MAPS: [&str; 3] = ["shor", "kar", "fkar"];
 const CONSONANT_MAPS: [&str; 2] = ["byanjon", "phola"];
 /// Maps whose keys produce other characters, independent of the context.
 const OTHER_MAPS: [&str; 2] = ["diacritic", "ongko"];
+/// Maps of the slicer (`/`, `//`, `///`), which breaks conjuncts or gives a chandrabindu.
+const SLICER_MAPS: [&str; 3] = ["slicer", "slicer2", "slicer3"];
 
 /// Placeholder character the input method emits for a bare modifier key.
 const PLACEHOLDER: char = '◌';
-const SLICER: &str = "/";
 
 /// Maximum number of tokens in a generated context pattern.
 const MAX_TOKENS: usize = 4;
@@ -107,7 +108,7 @@ fn collect_keys(file: &m17n_im::ast::InputMethodFile, maps: &[&str]) -> BTreeSet
         // Only keys that the suggestion input can contain
         .filter(|key| {
             key.chars()
-                .all(|c| c.is_ascii_lowercase() || c.is_ascii_digit() || c == ',' || c == '`')
+                .all(|c| c.is_ascii_lowercase() || c.is_ascii_digit() || matches!(c, ',' | '`' | '/'))
         })
         // Rules that don't insert anything (only state changes) are not patterns
         .filter(|key| !key.is_empty())
@@ -380,13 +381,15 @@ impl<'a> Fuzzer<'a> {
         tokens: &BTreeSet<String>,
         consonants: &BTreeSet<String>,
     ) -> Self {
+        let tokens: Vec<&String> = tokens.iter().filter(|t| exact.contains_key(*t)).collect();
+
         let variants: HashMap<String, Vec<String>> = tokens
             .iter()
-            .map(|t| (t.clone(), token_variants(t, consonants, exact)))
+            .map(|t| (t.to_string(), token_variants(t, consonants, exact)))
             .collect();
 
         let singles = tokens
-            .iter()
+            .into_iter()
             .map(|token| {
                 let transliterate: BTreeSet<String> = variants[token]
                     .iter()
@@ -426,12 +429,19 @@ impl<'a> Fuzzer<'a> {
         // e.g. `kt` → ক্ত, ক্ট
         let mut combinations = vec![String::new()];
         for part in parts {
-            let Some(variants) = self.variants.get(part) else {
-                return BTreeSet::new();
-            };
+            // A token without a pattern of its own (e.g. `///`) only stands for itself
+            let itself = [part.clone()];
+            let variants = self.variants.get(part).map_or(&itself[..], Vec::as_slice);
             combinations = combinations
                 .iter()
-                .flat_map(|c| variants.iter().map(move |v| format!("{c}{v}")))
+                .flat_map(|c| {
+                    variants
+                        .iter()
+                        // A variant ending in a slicer (`t` → `t/`) followed by a typed slicer
+                        // would read as a different slicer key (`t//`), which wasn't typed
+                        .filter(move |v| !(c.ends_with('/') && v.starts_with('/')))
+                        .map(move |v| format!("{c}{v}"))
+                })
                 .collect();
         }
 
@@ -625,6 +635,7 @@ pub fn generate_khipro_patterns(mim: &str, words: &Path, dest: &str) {
     let vowels = collect_keys(&file, &VOWEL_MAPS);
     let consonants = collect_keys(&file, &CONSONANT_MAPS);
     let others = collect_keys(&file, &OTHER_MAPS);
+    let slicers = collect_keys(&file, &SLICER_MAPS);
 
     let input_method = file
         .into_input_method(&mut Preprocessor::default())
@@ -650,16 +661,25 @@ pub fn generate_khipro_patterns(mim: &str, words: &Path, dest: &str) {
         }
     }
 
-    // The slicer gives a chandrabindu after a vowel; after consonants it breaks conjuncts,
-    // which the context patterns below take care of.
+    // The slicers give a chandrabindu after a vowel or on their own (`/`, `//`); after
+    // consonants they break conjuncts or give a chandrabindu (`kh///`), which the context
+    // patterns below take care of.
     let vowel = converter.convert("a").to_owned();
-    let after_vowel = converter.convert(&format!("a{SLICER}")).to_owned();
-    if let Some(chandrabindu) = after_vowel.strip_prefix(&vowel) {
-        if is_bangla(chandrabindu) {
+    for slicer in &slicers {
+        let mut alternatives = BTreeSet::new();
+
+        let after_vowel = converter.convert(&format!("a{slicer}")).to_owned();
+        if let Some(chandrabindu) = after_vowel.strip_prefix(&vowel) {
+            alternatives.insert(chandrabindu.to_owned());
+        }
+        alternatives.insert(converter.convert(slicer).to_owned());
+        alternatives.retain(|a| is_bangla(a));
+
+        if !alternatives.is_empty() {
             patterns.insert(
-                SLICER.to_owned(),
+                slicer.clone(),
                 Block {
-                    transliterate: vec![chandrabindu.to_owned()],
+                    transliterate: alternatives.into_iter().collect(),
                     entire_block_optional: None,
                 },
             );
@@ -672,25 +692,33 @@ pub fn generate_khipro_patterns(mim: &str, words: &Path, dest: &str) {
         .filter(|c| patterns.contains_key(c))
         .collect();
 
-    // Every single token of the patterns
-    let tokens: BTreeSet<String> = patterns.keys().cloned().collect();
+    // Every single token, including the slicers which only have a meaning in a context
+    let tokens: BTreeSet<String> = patterns.keys().chain(&slicers).cloned().collect();
 
     // What can follow a consonant and change how it is written
     let followers: Vec<&str> = consonants
         .iter()
         .chain(&vowels)
+        .chain(&slicers)
         .map(String::as_str)
-        .chain([SLICER])
         .collect();
 
     let mut base: Vec<Candidate> = Vec::new();
+
+    // A vowel ends the context, but check the pairs anyway, so that a context rule after
+    // a vowel can't be missed silently.
+    for first in &vowels {
+        for second in &followers {
+            base.push(Candidate::new(&[first, second], &tokens));
+        }
+    }
 
     for first in &consonants {
         for second in &followers {
             base.push(Candidate::new(&[first, second], &tokens));
 
             // Only a consonant or a slicer keeps the conjunct context open
-            if consonants.contains(*second) || *second == SLICER {
+            if consonants.contains(*second) || slicers.contains(*second) {
                 for third in &followers {
                     base.push(Candidate::new(&[first, second, third], &tokens));
                 }

@@ -14,6 +14,11 @@
       "ঁ"
     ]
   },
+  "//": {
+    "transliterate": [
+      "ঁ"
+    ]
+  },
   "0": {
     "transliterate": [
       "০"
@@ -102,12 +107,6 @@
     "transliterate": [
       "ব",
       "ভ"
-    ]
-  },
-  "b//": {
-    "transliterate": [
-      "বঁ",
-      "ভঁ"
     ]
   },
   "bb": {
@@ -287,11 +286,6 @@
   "bf": {
     "transliterate": [
       "ভ"
-    ]
-  },
-  "bf//": {
-    "transliterate": [
-      "ভঁ"
     ]
   },
   "bfb/": {
@@ -863,11 +857,6 @@
       "ছ"
     ]
   },
-  "c//": {
-    "transliterate": [
-      "চঁ"
-    ]
-  },
   "cb/": {
     "transliterate": [
       "চব"
@@ -1397,11 +1386,6 @@
       "দ"
     ]
   },
-  "d//": {
-    "transliterate": [
-      "দঁ"
-    ]
-  },
   "db": {
     "transliterate": [
       "ডব",
@@ -1764,6 +1748,16 @@
       "ধঁ"
     ]
   },
+  "dh//": {
+    "transliterate": [
+      "ধঁ"
+    ]
+  },
+  "dh///": {
+    "transliterate": [
+      "ধঁ"
+    ]
+  },
   "dhb": {
     "transliterate": [
       "ধব",
@@ -2094,11 +2088,6 @@
     "transliterate": [
       "গ",
       "ঘ"
-    ]
-  },
-  "g//": {
-    "transliterate": [
-      "গঁ"
     ]
   },
   "gb/": {
@@ -2818,11 +2807,6 @@
   "h": {
     "transliterate": [
       "হ"
-    ]
-  },
-  "h//": {
-    "transliterate": [
-      "হঁ"
     ]
   },
   "hb": {
@@ -4107,11 +4091,6 @@
     "transliterate": [
       "ক",
       "ক্ষ"
-    ]
-  },
-  "k//": {
-    "transliterate": [
-      "কঁ"
     ]
   },
   "kb": {
@@ -6586,6 +6565,21 @@
       "লট",
       "লতঁ",
       "লৎ"
+    ]
+  },
+  "lt//": {
+    "transliterate": [
+      "লতঁ"
+    ]
+  },
+  "lt///": {
+    "transliterate": [
+      "লতঁ"
+    ]
+  },
+  "lt//t": {
+    "transliterate": [
+      "লতত্ত"
     ]
   },
   "lt/r": {
@@ -10291,12 +10285,27 @@
       "ঽ"
     ]
   },
+  "offo": {
+    "transliterate": [
+      "ঽ"
+    ]
+  },
   "oo": {
     "transliterate": [
       "ঃ"
     ]
   },
+  "oof": {
+    "transliterate": [
+      "অঅ"
+    ]
+  },
   "ooo": {
+    "transliterate": [
+      "ঃঅ"
+    ]
+  },
+  "ooof": {
     "transliterate": [
       "ঃঅ"
     ]
@@ -10305,11 +10314,6 @@
     "transliterate": [
       "প",
       "ফ"
-    ]
-  },
-  "p//": {
-    "transliterate": [
-      "পঁ"
     ]
   },
   "pf": {
@@ -11385,6 +11389,11 @@
       "‌ৃ"
     ]
   },
+  "qffo": {
+    "transliterate": [
+      "‌ৃ"
+    ]
+  },
   "qq": {
     "transliterate": [
       "্"
@@ -11395,11 +11404,6 @@
       "র",
       "ড়",
       "ঢ়"
-    ]
-  },
-  "r//": {
-    "transliterate": [
-      "রঁ"
     ]
   },
   "rf": {
@@ -12217,6 +12221,16 @@
       "সঁ"
     ]
   },
+  "s//b": {
+    "transliterate": [
+      "শশ্ব"
+    ]
+  },
+  "s//b/": {
+    "transliterate": [
+      "শশব"
+    ]
+  },
   "sb": {
     "transliterate": [
       "শব",
@@ -12894,6 +12908,16 @@
   "sh//": {
     "transliterate": [
       "সঁ"
+    ]
+  },
+  "sh//b": {
+    "transliterate": [
+      "শশ্ব"
+    ]
+  },
+  "sh//b/": {
+    "transliterate": [
+      "শশব"
     ]
   },
   "shb": {
@@ -16239,6 +16263,59 @@
       "ৎ"
     ]
   },
+  "t//": {
+    "transliterate": [
+      "তঁ"
+    ]
+  },
+  "t///": {
+    "transliterate": [
+      "তঁ"
+    ]
+  },
+  "t//b": {
+    "transliterate": [
+      "তঁভ",
+      "তত্ব"
+    ]
+  },
+  "t//b/": {
+    "transliterate": [
+      "ততব"
+    ]
+  },
+  "t//bf": {
+    "transliterate": [
+      "তঁভ"
+    ]
+  },
+  "t//h": {
+    "transliterate": [
+      "তঁহ",
+      "তথ"
+    ]
+  },
+  "t//h/": {
+    "transliterate": [
+      "ততহ"
+    ]
+  },
+  "t//t": {
+    "transliterate": [
+      "ততত",
+      "তত্ত"
+    ]
+  },
+  "t//t/": {
+    "transliterate": [
+      "ততত"
+    ]
+  },
+  "t//tb": {
+    "transliterate": [
+      "তত্ত্ব"
+    ]
+  },
   "tb": {
     "transliterate": [
       "টব",
@@ -17358,6 +17435,11 @@
       "‌ু"
     ]
   },
+  "uffo": {
+    "transliterate": [
+      "‌ু"
+    ]
+  },
   "uu": {
     "transliterate": [
       "ঊ",
@@ -17375,14 +17457,14 @@
       "‌ূ"
     ]
   },
+  "uuffo": {
+    "transliterate": [
+      "‌ূ"
+    ]
+  },
   "v": {
     "transliterate": [
       "ভ"
-    ]
-  },
-  "v//": {
-    "transliterate": [
-      "ভঁ"
     ]
   },
   "vb/": {
@@ -17463,6 +17545,11 @@
   "wae": {
     "transliterate": [
       "ওয়্যা"
+    ]
+  },
+  "waef": {
+    "transliterate": [
+      "ওঅ্যা"
     ]
   },
   "waf": {

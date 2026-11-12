@@ -95,6 +95,24 @@ mod tests {
     }
 
     #[test]
+    fn test_slicer_chandrabindu() {
+        let suggest = Suggest::new();
+
+        // `//` after a consonant, and `///` after a consonant with an aspirate key (`dh`)
+        assert_eq!(sort(suggest.suggest("dh//dhul")), vec!["ধঁধুল"]);
+        assert_eq!(sort(suggest.suggest("dh///dhul")), vec!["ধঁধুল"]);
+        assert_eq!(sort(suggest.suggest("t//hi")), vec!["তঁহি", "তথি"]);
+    }
+
+    #[test]
+    fn test_vowel_led_clusters() {
+        let suggest = Suggest::new();
+
+        assert_eq!(sort(suggest.suggest("suurrz")), vec!["সূর্য"]);
+        assert_eq!(sort(suggest.suggest("marrjna")), vec!["মার্জনা"]);
+    }
+
+    #[test]
     fn test_explicit_modifiers_stay_exact() {
         let suggest = Suggest::new();
 
