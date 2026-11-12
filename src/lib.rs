@@ -7,4 +7,6 @@ static WORDS: Lazy<FstTree<&[u8]>> = Lazy::new(|| FstTree::from_fst(include_byte
 
 pub mod avro;
 pub mod bangla;
+pub mod khipro;
 mod fst;
+mod searcher;

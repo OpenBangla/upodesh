@@ -10,6 +10,8 @@ use fst::raw::Builder;
 use rexplode::explode;
 use serde::{Deserialize, Serialize};
 
+mod khipro;
+
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Block {
@@ -49,17 +51,17 @@ fn generate_words_fst() {
     fst.finish().expect("Failed to finish words FST generation");
 }
 
-fn generate_patterns_fst() {
+fn generate_patterns_fst(source: &str, dest: &str) {
     let root = PathBuf::from(var_os("CARGO_MANIFEST_DIR").unwrap());
     let parent = root.parent().unwrap();
-    let dest = parent.join("src").join("avro").join("patterns.fst");
+    let dest = parent.join(dest);
 
     let file = File::create(dest).expect("Failed to create patterns.fst");
     let writer = BufWriter::new(file);
 
     let mut fst = Builder::new(writer).unwrap();
     let patterns: HashMap<String, Block> = serde_json::from_slice(
-        &read(parent.join("data/preprocessed-patterns.json"))
+        &read(parent.join(source))
             .expect("Failed to read source patterns file"),
     )
     .unwrap();
@@ -127,8 +129,26 @@ fn main() {
             .expect("Give destination path");
 
         generate_regex_exploded_patterns(source, dest);
+    } else if let Some("khipro") = args.get(1).map(|s| s.as_str()) {
+        let source = args
+            .get(2)
+            .map(|s| s.as_str())
+            .expect("Give source Khipro input method (.mim) file");
+        let dest = args
+            .get(3)
+            .map(|s| s.as_str())
+            .expect("Give destination path");
+
+        let root = PathBuf::from(var_os("CARGO_MANIFEST_DIR").unwrap());
+        let words = root.parent().unwrap().join("data/source-words.txt");
+
+        khipro::generate_khipro_patterns(source, &words, dest);
     } else {
         generate_words_fst();
-        generate_patterns_fst();
+        generate_patterns_fst("data/preprocessed-patterns.json", "src/avro/patterns.fst");
+        generate_patterns_fst(
+            "data/khipro-preprocessed-patterns.json",
+            "src/khipro/patterns.fst",
+        );
     }
 }

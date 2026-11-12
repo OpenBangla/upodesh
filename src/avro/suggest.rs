@@ -1,129 +1,22 @@
-use std::collections::{HashMap, HashSet};
-
-use once_cell::sync::Lazy;
-use serde::Deserialize;
-
-use crate::{fst::FstTree, WORDS};
-
-static PATTERNS: Lazy<FstTree<&[u8]>> =
-    Lazy::new(|| FstTree::from_fst(include_bytes!("patterns.fst")));
-
-#[derive(Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct Block {
-    pub transliterate: Vec<String>,
-    pub entire_block_optional: Option<bool>,
-}
+use crate::searcher::PatternSuggest;
 
 pub struct Suggest {
-    patterns: HashMap<String, Block>,
-    common_suffixes: Vec<&'static str>,
+    inner: PatternSuggest,
 }
 
 impl Suggest {
     pub fn new() -> Self {
-        let patterns_data = include_bytes!("../../data/preprocessed-patterns.json");
-        let common_data = include_str!("../../data/source-common-patterns.txt");
-
-        let patterns: HashMap<String, Block> = serde_json::from_slice(patterns_data).unwrap();
-        let common_suffixes = common_data.lines().collect();
-
         Suggest {
-            patterns,
-            common_suffixes,
+            inner: PatternSuggest::new(
+                include_bytes!("patterns.fst"),
+                include_bytes!("../../data/preprocessed-patterns.json"),
+                include_str!("../../data/source-common-patterns.txt"),
+            ),
         }
     }
 
     pub fn suggest(&self, input: &str) -> Vec<String> {
-        let words = Lazy::force(&WORDS);
-        let patterns = Lazy::force(&PATTERNS);
-        let input = fix_string(input);
-
-        let (matched, mut remaining, _) = patterns.match_longest_common_prefix(&input);
-
-        let matched_patterns = if let Some(block) = self.patterns.get(matched) {
-            &block.transliterate
-        } else {
-            return vec![];
-        };
-
-        let mut matched_nodes = matched_patterns
-            .iter()
-            .filter_map(|p| words.matching_node(p))
-            .collect::<Vec<_>>();
-
-        let additional_nodes = matched_nodes
-            .iter()
-            .flat_map(|node| {
-                self.common_suffixes
-                    .iter()
-                    .filter_map(|suffix| node.get_matching_node(suffix))
-            })
-            .collect::<Vec<_>>();
-
-        matched_nodes.extend(additional_nodes);
-
-        while !remaining.is_empty() {
-            let (mut new_matched, new_remaining, mut complete) =
-                patterns.match_longest_common_prefix(remaining);
-
-            if !complete {
-                for i in (0..remaining.len()).rev() {
-                    (new_matched, _, complete) =
-                        patterns.match_longest_common_prefix(&remaining[..i]);
-
-                    if complete {
-                        remaining = &remaining[i..];
-                        break;
-                    }
-                }
-            } else {
-                remaining = new_remaining;
-            }
-
-            let new_matched_patterns = if let Some(block) = self.patterns.get(new_matched) {
-                &block.transliterate
-            } else {
-                // If no patterns match, we can stop here
-                break;
-            };
-
-            let new_matched_nodes = new_matched_patterns
-                .iter()
-                .flat_map(|p| {
-                    matched_nodes
-                        .iter()
-                        .filter_map(|node| node.get_matching_node(p))
-                })
-                .collect::<Vec<_>>();
-
-            if self
-                .patterns
-                .get(new_matched)
-                .map_or(false, |v| v.entire_block_optional.is_some())
-            {
-                // Entirely optional patterns like "([ওোঅ]|(অ্য)|(য়ো?))?" may not yield any result
-                matched_nodes.extend(new_matched_nodes);
-            } else {
-                matched_nodes = new_matched_nodes;
-            }
-
-            let additional_matched_nodes = matched_nodes
-                .iter()
-                .flat_map(|node| {
-                    self.common_suffixes
-                        .iter()
-                        .filter_map(|suffix| node.get_matching_node(suffix))
-                })
-                .collect::<Vec<_>>();
-            matched_nodes.extend(additional_matched_nodes);
-        }
-
-        let suggestions: HashSet<_> = matched_nodes
-            .into_iter()
-            .filter_map(|n| n.get_word())
-            .collect();
-        suggestions.into_iter().collect()
+        self.inner.suggest(&fix_string(input))
     }
 }
 

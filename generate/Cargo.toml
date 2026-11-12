@@ -8,3 +8,4 @@ fst = "0.4"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 rexplode = "1"
+m17n-im = { version = "0.2.2", features = ["dynamic"] }
